@@ -1,0 +1,37 @@
+/*=====COLORS=====*/
+
+$background: #fff;
+$header: #ff0000;
+$subheader: #ffff00;
+$text: #000;
+$link: blue;
+
+$border: #1ea0dd;
+$menu-border: #c2bab4;
+
+$menu: #c2bab4;
+$hover: #1ea0dd;
+
+$banner-height: 300px;
+
+$custom: 'AVB', sans-serif;
+$normal: Arial, Helvetica, sans-serif;
+
+@mixin bg-gradient {
+	/*== GRADIENT ==*/
+	background-color: #ABD9B2; 
+	background-image: url(../images/body-bg.png); 
+	background-repeat: repeat-x;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#309035), to(#ABD9B2));
+	background-image: -webkit-linear-gradient(top, #309035, #ABD9B2); 
+	background-image:    -moz-linear-gradient(top, #309035, #ABD9B2);
+	background-image:     -ms-linear-gradient(top, #309035, #ABD9B2);
+	background-image:      -o-linear-gradient(top, #309035, #ABD9B2);
+}
+
+@mixin transition($prop, $time, $ease: ease) {
+	-webkit-transition: $prop $time $ease;
+	-moz-transition: $prop $time $ease;
+  	-o-transition: $prop $time $ease;
+  	 transition: $prop $time $ease;
+} /*ex: @include transition(color, 0.1s); */
