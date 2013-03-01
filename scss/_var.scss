@@ -35,3 +35,19 @@ $normal: Arial, Helvetica, sans-serif;
   	-o-transition: $prop $time $ease;
   	 transition: $prop $time $ease;
 } /*ex: @include transition(color, 0.1s); */
+
+/* Responsive Breakpoints */
+@mixin bp($point) {
+  @if $point == XL {
+    @media (min-width: 1600px) { @content; }
+  }
+  @else if $point == L {
+    @media (max-width: 1175px) { @content; }
+  }
+  @else if $point == M {
+    @media (max-width: 900px)  { @content; }
+  }
+  @else if $point == S {
+    @media (max-width: 650px)  { @content; }
+  }
+} 
