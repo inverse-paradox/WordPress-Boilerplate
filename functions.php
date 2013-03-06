@@ -55,9 +55,15 @@ add_filter('excerpt_more', 'new_excerpt_more');
 //Enqueues CSS and JS for the Theme
 function ip_scripts_styles(){
 
-
-	wp_enqueue_script( 'functionalityDev', get_template_directory_uri() . '/js/functionality.js', array( 'jquery' ), '1.0', true );
-	wp_enqueue_style( 'styleDev', get_template_directory_uri() . '/css/global.css', '', '1.0' );
+	if ( is_home() || is_front_page() ) {
+		
+		wp_enqueue_script( 'jquery_cycle', get_template_directory_uri() . '/js/jquery.cycle.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'ip_cycle', get_template_directory_uri() . '/js/cycle.controls.js', array( 'jquery', 'jquery_cycle' ), '1.0', true );
+		
+	}
+	
+	wp_enqueue_script( 'ip_script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_style( 'ip_style', get_template_directory_uri() . '/css/global.css', '', '1.0' );
 
 	if ( is_singular( 'post' ) ){
 
