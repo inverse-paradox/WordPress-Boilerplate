@@ -6,7 +6,11 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
 
-    <title><?php wp_title(); ?></title>
+    <?php if (defined('WPSEO_VERSION')): ?>
+        <title><?php wp_title('|', true, 'right'); ?></title>
+    <?php else: ?>
+        <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
+    <?php endif; ?>
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 

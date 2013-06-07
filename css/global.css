@@ -343,8 +343,20 @@ table {
    BLOG COLORS
 =========================================================== */
 /* ===========================================================
-   EXTENDS
+   DEFAULTS
 =========================================================== */
+body {
+  font: 12px Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: black;
+  background-color: #fff; }
+
+a {
+  color: blue;
+  text-decoration: underline; }
+  a:hover, a:active {
+    color: black; }
+
 input, select, textarea {
   padding: 3px;
   font: Arial, Helvetica, sans-serif 12px;
@@ -369,20 +381,6 @@ input[type=submit] {
   cursor: pointer; }
   .lt-ie9 input[type=submit] {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0); }
-
-/* ===========================================================
-   DEFAULTS
-=========================================================== */
-body {
-  font: 12px Arial, Helvetica, sans-serif;
-  line-height: 1.5;
-  color: black;
-  background-color: #fff; }
-
-a {
-  color: #c40c1d; }
-  a:hover, a:active {
-    color: black; }
 
 br.clear {
   clear: both;

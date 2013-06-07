@@ -13,16 +13,27 @@ body {
     background-color: #fff;
 }
 a {
-    color: $red;
+    color: $link-blue;
+    text-decoration: underline;
     &:hover, &:active {
         color: $default-font-color;
     }
 }
 input, select, textarea {
-    @extend %form-field-base;
+    padding: 3px;
+    font: $default-font-family $default-font-size;
+    color: $default-font-color;
+    background: #fff;
+    border: 1px #ccc solid;
 }
 input[type=submit] {
-    @extend %button-base;
+    padding: 3px 6px;
+    font: $default-font-family $default-font-size;
+    color: $default-font-color;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    @include linear-gradient('to bottom', 'ffffff', '0', 'eeeeee', '100');
+    cursor: pointer;
 }
 br.clear {
     clear: both;
