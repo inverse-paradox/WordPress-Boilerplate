@@ -1,15 +1,15 @@
 <?php
-/* == include separate files ========== */
-$directory = dirname(__FILE__) . '/functions';
-if ($fh = opendir($directory)) {
-	while (false !== ($entry = readdir($fh))) {
-		if ($entry != '.' && $entry != '..') {
-			$ext = substr($entry, strrpos($entry, '.') + 1);
-			if ($ext == 'php') {
-				include $directory . '/' . $entry;
-			}
-		}
+
+function theme_loader($directory)
+{
+	$pattern = $directory.'/*';
+	foreach(glob($pattern) as $file){
+		if(is_dir($file)){
+			theme_loader($file);
+		} else {
+			include_once $file;
+		}				
 	}
 }
 
-?>
+theme_loader(dirname(__FILE__) . '/functions');
