@@ -1,0 +1,22 @@
+/* ===========================================================
+   FONT VARIABLES
+=========================================================== */
+
+$default-font-family: Arial, Helvetica, sans-serif;
+$default-font-size: 12px;
+$default-font-color: #000;
+
+/* ===========================================================
+   FONT FACE
+=========================================================== */
+
+@font-face {
+    font-family: 'Test';
+    src: url('../fonts/testfont.eot');
+    src: url('../fonts/testfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/testfont.woff') format('woff'),
+         url('../fonts/testfont.ttf') format('truetype'),
+         url('../fonts/testfont.svg#testfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

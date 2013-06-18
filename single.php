@@ -3,18 +3,34 @@
  * @package WordPress
  */
 get_header(); ?>
-<div class="content">
+
 <?php if (have_posts()): ?>
-	<?php while (have_posts()): the_post(); ?>
-		<h1><?php the_title(); ?></h1>
-		<p><?php echo date("F jS, Y",strtotime($post->post_date)); ?> | <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)')); ?> <?php edit_post_link('Edit This', ' | ', ''); ?></p>
-		<?php the_content(); ?>
-	<?php endwhile; ?>
-	<?php comments_template(); ?>
+
+    <?php while (have_posts()): the_post(); ?>
+
+        <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+            <h1><?php the_title(); ?></h1>
+            <div class="topmeta">
+                <span class="date"><?php echo the_time("F jS, Y"); ?></span>
+                <span class="category"><?php the_category(',') ?> </span>
+            </div><!--/topmeta-->
+            <div class="postcontent">
+                <?php the_content(__('(continue...)')); ?>
+                <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+            </div><!--/postcontent-->
+            <?php if (get_the_tags()) { ?><span class="tags"><?php the_tags('', ', ', ''); ?></span><?php } ?>
+        </div><!--/post-->
+
+        <?php comments_template(); ?>
+
+    <?php endwhile; ?>
+
 <?php else: ?>
-	<h2>Page Not Found</h2>
-	<p>Sorry, this page you are looking for could not be found.</p>
+
+    <?php get_template_part('notfound'); ?>
+
 <?php endif; ?>
-</div><!--END content-->
+
 <?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

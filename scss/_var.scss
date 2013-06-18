@@ -1,53 +1,40 @@
-/*=====COLORS=====*/
 
-$background: #fff;
-$header: #ff0000;
-$subheader: #ffff00;
-$text: #000;
-$link: blue;
+/* ===========================================================
+   BRANDING COLORS
+=========================================================== */
 
-$border: #1ea0dd;
-$menu-border: #c2bab4;
+$light-gray: #e4e4e4;
+$red: #c40c1d;
 
-$menu: #c2bab4;
-$hover: #1ea0dd;
+/* ===========================================================
+   BLOG COLORS
+=========================================================== */
 
-$banner-height: 300px;
+$post-meta-bg: #f2f2f2;
+$post-meta-border: #e5e5e5;
+$comment-bg: #fafafa;
+$comment-border: #e0e0e0;
+$comment-alt-bg: #f2f2f2;
+$comment-alt-border: #d9d9d9;
+$comment-meta-border: #e5e5e5;
 
-$custom: 'AVB', sans-serif;
-$normal: Arial, Helvetica, sans-serif;
+/* ===========================================================
+   EXTENDS
+=========================================================== */
 
-@mixin bg-gradient {
-	/*== GRADIENT ==*/
-	background-color: #ABD9B2; 
-	background-image: url(../images/body-bg.png); 
-	background-repeat: repeat-x;
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#309035), to(#ABD9B2));
-	background-image: -webkit-linear-gradient(top, #309035, #ABD9B2); 
-	background-image:    -moz-linear-gradient(top, #309035, #ABD9B2);
-	background-image:     -ms-linear-gradient(top, #309035, #ABD9B2);
-	background-image:      -o-linear-gradient(top, #309035, #ABD9B2);
+%form-field-base {
+    padding: 3px;
+    font: $default-font-family $default-font-size;
+    color: $default-font-color;
+    background: #fff;
+    border: 1px #ccc solid;
 }
-
-@mixin transition($prop, $time, $ease: ease) {
-	-webkit-transition: $prop $time $ease;
-	-moz-transition: $prop $time $ease;
-  	-o-transition: $prop $time $ease;
-  	 transition: $prop $time $ease;
-} /*ex: @include transition(color, 0.1s); */
-
-/* Responsive Breakpoints */
-@mixin bp($point) {
-  @if $point == XL {
-    @media (min-width: 1600px) { @content; }
-  }
-  @else if $point == L {
-    @media (max-width: 1175px) { @content; }
-  }
-  @else if $point == M {
-    @media (max-width: 900px)  { @content; }
-  }
-  @else if $point == S {
-    @media (max-width: 650px)  { @content; }
-  }
-} 
+%button-base {
+    padding: 3px 6px;
+    font: $default-font-family $default-font-size;
+    color: $default-font-color;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    @include linear-gradient('to bottom', 'ffffff', '0', 'eeeeee', '100');
+    cursor: pointer;
+}

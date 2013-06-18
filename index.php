@@ -3,17 +3,33 @@
  * @package WordPress
  */
 get_header(); ?>
-<div class="content">
+
 <?php if (have_posts()): ?>
-	<?php while (have_posts()): the_post(); ?>
-		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-		<p><?php echo date("F jS, Y",strtotime($post->post_date)); ?> | <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)')); ?></p>
-		<?php the_excerpt(); ?>
-	<?php endwhile; ?>
+    <?php while (have_posts()): the_post(); ?>
+
+        <h1><?php the_title(); ?></h1>
+        <?php the_content(); ?>
+
+    <?php endwhile; ?>
+    
+    <?php if( get_previous_posts_link() ) : ?>
+    
+    	<span class="pagination button alignleft"><?php previous_posts_link('&laquo; Newer Entries'); ?></span>
+    
+    <?php endif; ?>
+    
+    <?php if( get_next_posts_link() ) : ?>
+    
+    	<span class="pagination button alignright"><?php next_posts_link('Older Entries &raquo;'); ?></span>
+    	
+   	<?php endif; ?>
+
 <?php else: ?>
-	<h2>Page Not Found</h2>
-	<p>Sorry, this page you are looking for could not be found.</p>
+
+    <?php get_template_part('notfound'); ?>
+
 <?php endif; ?>
-</div><!--END content-->
+
 <?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

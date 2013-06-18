@@ -1,258 +1,126 @@
 @import "normalize";
+@import "fonts";
+@import "mixins";
 @import "var";
 
-
-/*=======================
-	FONTS
-=========================*/
-
-/*@font-face {
-    font-family: 'Test';
-    src: url('../fonts/test-webfont.eot?') format('eot'),
-         url('../fonts/test-webfont.woff') format('woff'),
-         url('../fonts/test-webfont.ttf') format('truetype'),
-         url('../fonts/test-webfont.svg#test') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}*/
-
-
-/*=======================
-	CLEARS
-=========================*/
-
-.group:before,
-.group:after {
-    content: "";
-    display: table;
-} 
-.group:after {
-    clear: both;
-}
-.group {
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
-}
-
-.clear {
-	clear: both;
-}
-
-
-/*=======================
-	PAGE
-=========================*/
-
+/* ===========================================================
+   DEFAULTS
+=========================================================== */
 body {
-	background: $background;
+    font: $default-font-size $default-font-family;
+    line-height: 1.5;
+    color: $default-font-color;
+    background-color: #fff;
+}
+a {
+    color: $red;
+    &:hover, &:active {
+        color: $default-font-color;
+    }
+}
+input, select, textarea {
+    @extend %form-field-base;
+}
+input[type=submit] {
+    @extend %button-base;
+}
+br.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
 }
 
+
+/* ===========================================================
+   PAGE WRAPPER
+=========================================================== */
 .container {
-	width: 962px;
-	margin: 0 auto;
+    margin: 0 auto;
+    @include clearfix;
 }
 
-.main {
-	width: 100%;
-	float: left;
-	position: relative;
-}
 
-/*=======================
-	HEADER
-=========================*/
-
+/* ===========================================================
+   HEADER
+=========================================================== */
 .header {
-	float: left;
-	position: relative;
-	width: 100%;
-	padding-top: 5px;
-
-	.logo {
-		float: left;
-	}
+    @include clearfix;
 }
 
-/*=======================
-	NAV
-=========================*/
 
+/* ===========================================================
+   MAIN NAV
+=========================================================== */
 .nav {
-	float: left;
-	position: relative;
-	width: 100%;
-
-	ul {
-		float: left;
-		position: relative;
-
-		li {
-			float: left;
-			position: relative;
-			margin-left: 10px;
-			padding-left: 10px;
-			border-left: 1px solid $menu-border;
-
-			&:first-child {
-				margin-left: 0;
-				padding-left: 0;
-				border-left: 0;
-			}
-
-			a {
-				float: left;
-				font-size: 16px;
-				line-height: 16px;
-				color: $menu;
-			}
-
-			&.current-menu-item a, a:hover {
-				color: $hover;
-			}
-		}
-	}
-}
-
-/*=======================
-	BANNER
-=========================*/
-
-.banner {
-	width: 100%;
-	height: $banner-height;
-	float: left;
-	position: relative;
-
-	.banner-nav {
-		position: absolute;
-		right: 0px;
-		bottom: 0px;
-		z-index: 30;
-		padding: 10px;
-
-		a {
-			width: 9px;
-			height: 9px;
-			float: left;
-			margin-right: 4px;
-			text-indent: -999px;
-			overflow: hidden;
-			background: url(../images/banner-nav-bg.png) top left no-repeat;
-
-			&.activeSlide { background-position: center center; }
-
-			&:hover { background-position: top right; }
-		}
-	}
-
-	.banner-slides {
-		width: 100%;
-		height: $banner-height;
-
-		.banner-slide {
-			width: 100%;
-			height: $banner-height;
-		}
-	}
+    @include clearfix;
 }
 
 
-/*=======================
-	CONTENT
-=========================*/
-
-.content {
-	float: left;
-	position: relative;
-	width: 75%;
-
-
-	/*====TYPOGRAPHY====*/
-
-	h1 {
-		font: 30px/30px $custom;
-		color: $header;
-	}
-
-	h2 {
-		font: 20px/20px $custom;
-		color: $header;
-	}
-
-	h3 {
-		font: 16px/16px $custom;
-		color: $subheader;
-	}
-
-	h4 {
-		font: 14px/14px $normal;
-		color: $subheader;
-	}
-
-	p {
-		font: 14px/18px $normal;
-		color: $text;
-		padding-bottom: 15px;
-
-		a {
-			color: $link;
-			&:hover {text-decoration: underline;}
-		}
-	}
-
-	ul {
-		margin: 0 0 15px 20px;
-		list-style: disc outside;
-
-		li {
-			color: $text;
-			font: 14px/18px $normal;
-
-			a {
-				color: $link;
-				&:hover {text-decoration: underline;}
-			}
-		}
-	}
-
+/* ===========================================================
+   PAGE BODY
+=========================================================== */
+.page-body {
+    @include clearfix;
 }
 
 
-/*=======================
-	SIDEBAR
-=========================*/
-
-.sidebar {
-	float: right;	
-	position: relative;
-	width: 25%;
+/* ===========================================================
+   MAIN COLUMN
+=========================================================== */
+.main {
+    @include clearfix;
 }
 
-/*=======================
-	FOOTER
-=========================*/
-
-.footer {
-	float: left;
-	width: 100%;
-	min-height: 80px;
-	
-}
-
-/* =======================================
-   WP EDITOR
-======================================= */
 .aligncenter {
-	text-align: center;
+    text-align: center;
 }
 .alignleft {
-	float: left;
-}
-img.alignleft {
-	margin: 0 15px 0 0;
+    float: left;
 }
 .alignright {
-	float: right;
+    float: right;
 }
-img.alignright {
-	margin: 0 0 0 15px;
+img.alignleft, .wp-caption.alignleft {
+    margin: 0 12px 4px 0;
+}
+img.alignright, .wp-caption.alignright {
+    margin: 0 0 4px 12px;
+}
+img.aligncenter, .wp-caption.aligncenter {
+    display: block;
+    margin: 0 auto;
+}
+.wp-caption {
+    margin: 10px 0;
+    padding: 4px 0 0;
+    text-align: center;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    .wp-caption-text {
+        padding: 0 4px 5px;
+        font-size: 11px;
+        line-height: 17px;
+    }
+}
+
+/* ===========================================================
+   SIDE COLUMN
+=========================================================== */
+.side {
+    @include clearfix;
+}
+
+
+/* ===========================================================
+   SPECIFIC PAGES
+=========================================================== */
+@import 'blog';
+
+
+/* ===========================================================
+   FOOTER
+=========================================================== */
+.footer {
+    @include clearfix;
 }
