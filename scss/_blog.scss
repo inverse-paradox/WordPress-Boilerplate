@@ -5,7 +5,7 @@
     margin: 15px 0 30px 0;
     .topmeta {
         margin: 0 0 12px;
-        @include clearfix;
+        @extend %clearfix;
         .date {
             float: left;
             min-height: 16px;
@@ -30,7 +30,7 @@
         }
     }
     .bottommeta {
-        @include clearfix;
+        @extend %clearfix;
         .category {
             float: left;
             padding: 0 0 0 20px;
@@ -55,7 +55,7 @@
     }
     .postcontent {
         margin: 12px 0 0;
-        @include clearfix;
+        @extend %clearfix;
     }
     .tags {
         display: block;

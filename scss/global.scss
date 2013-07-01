@@ -13,7 +13,7 @@ body {
     background-color: #fff;
 }
 a {
-    color: $link-blue;
+    color: $default-link-color;
     text-decoration: underline;
     &:hover, &:active {
         color: $default-font-color;
@@ -32,7 +32,7 @@ input[type=submit] {
     color: $default-font-color;
     border: 1px #ccc solid;
     border-radius: 5px;
-    @include linear-gradient('to bottom', 'ffffff', '0', 'eeeeee', '100');
+    @include linear-gradient-svg('to bottom', 'ffffff', '0', 'eeeeee', '100');
     cursor: pointer;
 }
 br.clear {
@@ -47,7 +47,7 @@ br.clear {
 =========================================================== */
 .container {
     margin: 0 auto;
-    @include clearfix;
+    @extend %clearfix;
 }
 
 
@@ -55,7 +55,7 @@ br.clear {
    HEADER
 =========================================================== */
 .header {
-    @include clearfix;
+    @extend %clearfix;
 }
 
 
@@ -63,7 +63,7 @@ br.clear {
    MAIN NAV
 =========================================================== */
 .nav {
-    @include clearfix;
+    @extend %clearfix;
 }
 
 
@@ -71,7 +71,7 @@ br.clear {
    PAGE BODY
 =========================================================== */
 .page-body {
-    @include clearfix;
+    @extend %clearfix;
 }
 
 
@@ -79,7 +79,7 @@ br.clear {
    MAIN COLUMN
 =========================================================== */
 .main {
-    @include clearfix;
+    @extend %clearfix;
 }
 
 .aligncenter {
@@ -119,7 +119,7 @@ img.aligncenter, .wp-caption.aligncenter {
    SIDE COLUMN
 =========================================================== */
 .side {
-    @include clearfix;
+    @extend %clearfix;
 }
 
 
@@ -133,5 +133,5 @@ img.aligncenter, .wp-caption.aligncenter {
    FOOTER
 =========================================================== */
 .footer {
-    @include clearfix;
+    @extend %clearfix;
 }

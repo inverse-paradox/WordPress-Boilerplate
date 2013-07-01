@@ -331,8 +331,18 @@ table {
   border-spacing: 0; }
 
 /* ===========================================================
-   MIXINS
+   MIXINS & EXTENDS
 =========================================================== */
+.container:after, .header:after, .nav:after, .page-body:after, .main:after, .side:after, .post .topmeta:after, .post .bottommeta:after, .post .postcontent:after, .footer:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden; }
+.lte-ie8 .container, .lte-ie8 .header, .lte-ie8 .nav, .lte-ie8 .page-body, .lte-ie8 .main, .lte-ie8 .side, .lte-ie8 .post .topmeta, .post .lte-ie8 .topmeta, .lte-ie8 .post .bottommeta, .post .lte-ie8 .bottommeta, .lte-ie8 .post .postcontent, .post .lte-ie8 .postcontent, .lte-ie8 .footer {
+  zoom: 1; }
+
 /* ===========================================================
    FONTS
 =========================================================== */
@@ -379,7 +389,7 @@ input[type=submit] {
   background-image: -ms-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
   background-image: linear-gradient(to bottom, #ffffff 0%, #eeeeee 100%);
   cursor: pointer; }
-  .lt-ie9 input[type=submit] {
+  .lte-ie8 input[type=submit] {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0); }
 
 br.clear {
@@ -392,68 +402,19 @@ br.clear {
 =========================================================== */
 .container {
   margin: 0 auto; }
-  .container:after {
-    content: ".";
-    display: block;
-    clear: both;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden; }
-  .ie7 .container {
-    zoom: 1; }
 
 /* ===========================================================
    HEADER
 =========================================================== */
-.header:after {
-  content: ".";
-  display: block;
-  clear: both;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden; }
-.ie7 .header {
-  zoom: 1; }
-
 /* ===========================================================
    MAIN NAV
 =========================================================== */
-.nav:after {
-  content: ".";
-  display: block;
-  clear: both;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden; }
-.ie7 .nav {
-  zoom: 1; }
-
 /* ===========================================================
    PAGE BODY
 =========================================================== */
-.page-body:after {
-  content: ".";
-  display: block;
-  clear: both;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden; }
-.ie7 .page-body {
-  zoom: 1; }
-
 /* ===========================================================
    MAIN COLUMN
 =========================================================== */
-.main:after {
-  content: ".";
-  display: block;
-  clear: both;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden; }
-.ie7 .main {
-  zoom: 1; }
-
 .aligncenter {
   text-align: center; }
 
@@ -488,16 +449,6 @@ img.aligncenter, .wp-caption.aligncenter {
 /* ===========================================================
    SIDE COLUMN
 =========================================================== */
-.side:after {
-  content: ".";
-  display: block;
-  clear: both;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden; }
-.ie7 .side {
-  zoom: 1; }
-
 /* ===========================================================
    SPECIFIC PAGES
 =========================================================== */
@@ -508,15 +459,6 @@ img.aligncenter, .wp-caption.aligncenter {
   margin: 15px 0 30px 0; }
   .post .topmeta {
     margin: 0 0 12px; }
-    .post .topmeta:after {
-      content: ".";
-      display: block;
-      clear: both;
-      height: 0;
-      overflow: hidden;
-      visibility: hidden; }
-    .ie7 .post .topmeta {
-      zoom: 1; }
     .post .topmeta .date {
       float: left;
       min-height: 16px;
@@ -535,15 +477,6 @@ img.aligncenter, .wp-caption.aligncenter {
       min-height: 16px;
       line-height: 16px;
       background: url(../images/folder.png) no-repeat top left; }
-  .post .bottommeta:after {
-    content: ".";
-    display: block;
-    clear: both;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden; }
-  .ie7 .post .bottommeta {
-    zoom: 1; }
   .post .bottommeta .category {
     float: left;
     padding: 0 0 0 20px;
@@ -563,15 +496,6 @@ img.aligncenter, .wp-caption.aligncenter {
       padding: 1px 0 1px 20px; }
   .post .postcontent {
     margin: 12px 0 0; }
-    .post .postcontent:after {
-      content: ".";
-      display: block;
-      clear: both;
-      height: 0;
-      overflow: hidden;
-      visibility: hidden; }
-    .ie7 .post .postcontent {
-      zoom: 1; }
   .post .tags {
     display: block;
     min-height: 16px;
@@ -650,12 +574,3 @@ img.aligncenter, .wp-caption.aligncenter {
 /* ===========================================================
    FOOTER
 =========================================================== */
-.footer:after {
-  content: ".";
-  display: block;
-  clear: both;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden; }
-.ie7 .footer {
-  zoom: 1; }
