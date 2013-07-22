@@ -1,15 +1,20 @@
+/* ===========================================================
+   FONTS
+=========================================================== */
+$default-font-family: Arial, Helvetica, sans-serif;
+$default-font-size: 12px;
+$default-font-color: #000;
+
+$heading-font-family: $default-font-family;
 
 /* ===========================================================
    BRANDING COLORS
 =========================================================== */
-
-$light-gray: #e4e4e4;
-$red: #c40c1d;
+$default-link-color: #0000ff;
 
 /* ===========================================================
    BLOG COLORS
 =========================================================== */
-
 $post-meta-bg: #f2f2f2;
 $post-meta-border: #e5e5e5;
 $comment-bg: #fafafa;
@@ -17,24 +22,3 @@ $comment-border: #e0e0e0;
 $comment-alt-bg: #f2f2f2;
 $comment-alt-border: #d9d9d9;
 $comment-meta-border: #e5e5e5;
-
-/* ===========================================================
-   EXTENDS
-=========================================================== */
-
-%form-field-base {
-    padding: 3px;
-    font: $default-font-family $default-font-size;
-    color: $default-font-color;
-    background: #fff;
-    border: 1px #ccc solid;
-}
-%button-base {
-    padding: 3px 6px;
-    font: $default-font-family $default-font-size;
-    color: $default-font-color;
-    border: 1px #ccc solid;
-    border-radius: 5px;
-    @include linear-gradient('to bottom', 'ffffff', '0', 'eeeeee', '100');
-    cursor: pointer;
-}

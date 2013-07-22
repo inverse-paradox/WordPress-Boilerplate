@@ -13,16 +13,27 @@ body {
     background-color: #fff;
 }
 a {
-    color: $red;
+    color: $default-link-color;
+    text-decoration: underline;
     &:hover, &:active {
         color: $default-font-color;
     }
 }
 input, select, textarea {
-    @extend %form-field-base;
+    padding: 3px;
+    font: $default-font-family $default-font-size;
+    color: $default-font-color;
+    background: #fff;
+    border: 1px #ccc solid;
 }
 input[type=submit] {
-    @extend %button-base;
+    padding: 3px 6px;
+    font: $default-font-family $default-font-size;
+    color: $default-font-color;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    @include linear-gradient-svg('to bottom', 'ffffff', '0', 'eeeeee', '100');
+    cursor: pointer;
 }
 br.clear {
     clear: both;
@@ -36,7 +47,7 @@ br.clear {
 =========================================================== */
 .container {
     margin: 0 auto;
-    @include clearfix;
+    @extend %clearfix;
 }
 
 
@@ -44,7 +55,7 @@ br.clear {
    HEADER
 =========================================================== */
 .header {
-    @include clearfix;
+    @extend %clearfix;
 }
 
 
@@ -52,7 +63,7 @@ br.clear {
    MAIN NAV
 =========================================================== */
 .nav {
-    @include clearfix;
+    @extend %clearfix;
 }
 
 
@@ -60,7 +71,7 @@ br.clear {
    PAGE BODY
 =========================================================== */
 .page-body {
-    @include clearfix;
+    @extend %clearfix;
 }
 
 
@@ -68,7 +79,7 @@ br.clear {
    MAIN COLUMN
 =========================================================== */
 .main {
-    @include clearfix;
+    @extend %clearfix;
 }
 
 .aligncenter {
@@ -108,7 +119,7 @@ img.aligncenter, .wp-caption.aligncenter {
    SIDE COLUMN
 =========================================================== */
 .side {
-    @include clearfix;
+    @extend %clearfix;
 }
 
 
@@ -122,5 +133,5 @@ img.aligncenter, .wp-caption.aligncenter {
    FOOTER
 =========================================================== */
 .footer {
-    @include clearfix;
+    @extend %clearfix;
 }

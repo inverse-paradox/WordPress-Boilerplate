@@ -1,7 +1,7 @@
 /* ===========================================================
-   MIXINS
+   MIXINS & EXTENDS
 =========================================================== */
-@mixin clearfix {
+%clearfix {
     &:after {
         content: ".";
         display: block;
@@ -10,16 +10,36 @@
         overflow: hidden;
         visibility: hidden;
     }
-    .ie7 & {
+    .lte-ie8 & {
         zoom: 1;
     }
 }
+
 @mixin hide-text {
     overflow: hidden;
     text-indent: -9999px;
 }
 
 @mixin linear-gradient($direction, $color1, $offset1, $color2, $offset2) {
+    $angle_webkit: 'left top, left bottom';
+    $angle_old: 'top';
+    @if $direction == 'to right' {
+        $angle_webkit: 'left top, right top';
+        $angle_old: 'left';
+    }
+    background: $color1;
+    background-image:    -moz-linear-gradient(#{$angle_old}, #{$color1} #{$offset1}, #{$color2} #{$offset2});
+    background-image:        -webkit-gradient(linear, #{$angle_webkit}, color-stop(#{$offset1}, #{$color1}), color-stop(#{$offset2}, #{$color2}));
+    background-image: -webkit-linear-gradient(#{$angle_old}, #{$color1} #{$offset1}, #{$color2} #{$offset2});
+    background-image:      -o-linear-gradient(#{$angle_old}, #{$color1} #{$offset1}, #{$color2} #{$offset2});
+    background-image:     -ms-linear-gradient(#{$angle_old}, #{$color1} #{$offset1}, #{$color2} #{$offset2});
+    background-image:         linear-gradient(#{$direction}, #{$color1} #{$offset1}, #{$color2} #{$offset2});
+    .lte-ie9 & {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color1}', endColorstr='#{$color2}', GradientType=0);
+    }
+}
+
+@mixin linear-gradient-svg($direction, $color1, $offset1, $color2, $offset2) {
     $color1css: '#'#{$color1}'';
     $color2css: '#'#{$color2}'';
     $offset1css: ''#{$offset1}'%';
@@ -43,7 +63,7 @@
     background-image:      -o-linear-gradient(#{$angle_old}, #{$color1css} #{$offset1css}, #{$color2css} #{$offset2css});
     background-image:     -ms-linear-gradient(#{$angle_old}, #{$color1css} #{$offset1css}, #{$color2css} #{$offset2css});
     background-image:         linear-gradient(#{$direction}, #{$color1css} #{$offset1css}, #{$color2css} #{$offset2css});
-    .lt-ie9 & {
+    .lte-ie8 & {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color1css}', endColorstr='#{$color2css}', GradientType=0);
     }
 }

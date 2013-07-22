@@ -34,7 +34,6 @@ function ip_alter_manage_posts_columns($columns)
 /* ===============================================================
     fill in content of custom columns
 =============================================================== */
-
 function ip_manage_posts_custom_columns($column, $post_id)
 {
     switch($column) {
@@ -48,7 +47,6 @@ function ip_manage_posts_custom_columns($column, $post_id)
 /* ===============================================================
     change "posts" label to "articles"
 =============================================================== */
-
 function ip_change_post_menu_label()
 {
     global $menu;
