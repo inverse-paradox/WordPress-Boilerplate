@@ -20,6 +20,14 @@
     text-indent: -9999px;
 }
 
+
+/* =============================================================================
+   2-COLOR LINEAR GRADIENT
+   Can take actual color and percentage values
+   (e.g. hex codes, rgba, variables, color functions)
+   Uses ms filter in IE9 (somewhat buggy, will have square corners)
+   linear-gradient(to bottom, #ffffff, 0%, darken(#ffffff, 20%), 100%)
+============================================================================= */
 @mixin linear-gradient($direction, $color1, $offset1, $color2, $offset2) {
     $angle_webkit: 'left top, left bottom';
     $angle_old: 'top';
@@ -39,6 +47,12 @@
     }
 }
 
+/* =============================================================================
+   2-COLOR LINEAR GRADIENT W/ SVG
+   Takes hex codes (without #) and numbers (without %)
+   Uses svg in IE9 (better support than filter, supports rounded corners)
+   linear-gradient-svg('to bottom', 'ffffff', '0', '000000', '100')
+============================================================================= */
 @mixin linear-gradient-svg($direction, $color1, $offset1, $color2, $offset2) {
     $color1css: '#'#{$color1}'';
     $color2css: '#'#{$color2}'';
