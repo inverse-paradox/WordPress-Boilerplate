@@ -17,4 +17,19 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>            
+<body <?php body_class(); ?>>
+
+    <div class="all-content-wrapper">
+        <div class="all-content-wrapper-inner">
+
+            <div class="nav">
+                <a href="#" id="main-nav-toggle">Menu</a>
+                <?php wp_nav_menu(array(
+                    'theme_location' => '',
+                    'before' => '<span class="link-wrap">',
+                    'after' => '<span class="arrow"></span></span>',
+                    'container' => false,
+                    'menu_class' => '',
+                    'menu_id' => 'main-nav',
+                )); ?>
+            </div><!--/nav-->

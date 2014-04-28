@@ -90,6 +90,8 @@ img {
     @extend %clearfix;
 }
 
+/* import the menu you're using */
+@import 'nav-vert-offcanvas';
 
 /* =============================================================================
    PAGE BODY
