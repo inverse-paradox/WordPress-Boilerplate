@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!--[if lte IE 6]>     <html <?php language_attributes(); ?> class="no-js lte-ie9 lte-ie8 lte-ie7 lte-ie6"> <![endif]-->
-<!--[if lte IE 7]>     <html <?php language_attributes(); ?> class="no-js lte-ie9 lte-ie8 lte-ie7"> <![endif]-->
 <!--[if lte IE 8]>     <html <?php language_attributes(); ?> class="no-js lte-ie9 lte-ie8"> <![endif]-->
 <!--[if lte IE 9]>     <html <?php language_attributes(); ?> class="no-js lte-ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
@@ -12,24 +10,26 @@
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1" />
 
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
-    <div class="all-content-wrapper">
-        <div class="all-content-wrapper-inner">
+    <div class="page-wrapper">
 
-            <div class="nav">
-                <a href="#" id="main-nav-toggle">Menu</a>
-                <?php wp_nav_menu(array(
-                    'theme_location' => '',
-                    'before' => '<span class="link-wrap">',
-                    'after' => '<span class="arrow"></span></span>',
-                    'container' => false,
-                    'menu_class' => '',
-                    'menu_id' => 'main-nav',
-                )); ?>
-            </div><!--/nav-->
+        <header class="header" role="header">
+            <div class="content-wrapper">
+                <?php $logo_tag = (is_front_page()) ? 'h1' : 'span'; ?>
+                <<?php echo $logo_tag; ?> class="logo">
+                    <a href="<?php bloginfo('url'); ?>/"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" /></a>
+                </<?php echo $logo_tag; ?>>
+            </div><!--/content-wrapper-->
+        </header><!--/header-->
+
+        <nav class="main-nav" role="navigation">
+            <div class="content-wrapper">
+                <?php wp_nav_menu('theme_location='); ?>
+            </div><!--/content-wrapper-->
+        </nav><!--/main-nav-->

@@ -65,12 +65,17 @@ img {
 
 
 /* =============================================================================
-   PAGE WRAPPER
+    WRAPPERS
 ============================================================================= */
-.container {
+/* .page-wrapper { */
+.content-wrapper {
     margin: 0 auto;
     width: 94%;
     max-width: 1140px;
+    @extend %clearfix;
+}
+
+.main-content-wrapper {
     @extend %clearfix;
 }
 
@@ -86,17 +91,7 @@ img {
 /* =============================================================================
    MAIN NAV
 ============================================================================= */
-.nav {
-    @extend %clearfix;
-}
-
-/* import the menu you're using */
-@import 'nav-vert-offcanvas';
-
-/* =============================================================================
-   PAGE BODY
-============================================================================= */
-.page-body {
+.main-nav {
     @extend %clearfix;
 }
 
@@ -110,15 +105,15 @@ img {
     /* === BASIC TEXT STYLES ================================================ */
     h1 {
         margin: 0 0 .3em;
-        font-size: 2em;
+        font: 2em $heading-font;
     }
     h2 {
         margin: 1.5em 0 .3em;
-        font-size: 1.6em;
+        font: 1.6em $heading-font;
     }
     h3 {
         margin: 1.5em 0 .3em;
-        font-size: 1.3em;
+        font: 1.3em $heading-font;
     }
     h4 {
         margin: 1.5em 0 .3em;
@@ -183,7 +178,7 @@ img.aligncenter, .wp-caption.aligncenter {
 /* =============================================================================
    SIDE COLUMN
 ============================================================================= */
-.side {
+.sidebar {
     @extend %clearfix;
 }
 
@@ -199,4 +194,5 @@ img.aligncenter, .wp-caption.aligncenter {
 /* =============================================================================
    SPECIFIC PAGE IMPORTS
 ============================================================================= */
+@import 'home';
 //@import 'blog';

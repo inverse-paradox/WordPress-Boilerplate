@@ -1,4 +1,4 @@
-/* normalize.css v2.0.1 | MIT License | git.io/normalize */
+/*! normalize.css v2.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    Additions
    ========================================================================== */
@@ -343,14 +343,14 @@ table {
 /* ===========================================================
    MIXINS & EXTENDS
 =========================================================== */
-.container:after, .header:after, .nav:after, .page-body:after, .main:after, .side:after, .footer:after {
+.content-wrapper:after, .main-content-wrapper:after, .header:after, .main-nav:after, .main:after, .sidebar:after, .footer:after {
   content: ".";
   display: block;
   clear: both;
   height: 0;
   overflow: hidden;
   visibility: hidden; }
-.lte-ie8 .container, .lte-ie8 .header, .lte-ie8 .nav, .lte-ie8 .page-body, .lte-ie8 .main, .lte-ie8 .side, .lte-ie8 .footer {
+.lte-ie8 .content-wrapper, .lte-ie8 .main-content-wrapper, .lte-ie8 .header, .lte-ie8 .main-nav, .lte-ie8 .main, .lte-ie8 .sidebar, .lte-ie8 .footer {
   zoom: 1; }
 
 /* =============================================================================
@@ -442,9 +442,10 @@ img {
   height: auto; }
 
 /* =============================================================================
-   PAGE WRAPPER
+    WRAPPERS
 ============================================================================= */
-.container {
+/* .page-wrapper { */
+.content-wrapper {
   margin: 0 auto;
   width: 94%;
   max-width: 1140px; }
@@ -455,166 +456,6 @@ img {
 /* =============================================================================
    MAIN NAV
 ============================================================================= */
-/* import the menu you're using */
-/* =============================================================================
-   MAX 2-LEVEL RESPONSIVE MENU W/ VERTICAL EXPANSION - OFF CANVAS
-============================================================================= */
-.all-content-wrapper {
-  overflow: hidden; }
-
-.all-content-wrapper-inner {
-  position: relative;
-  left: 0;
-  -webkit-transition: left 0.3s;
-  transition: left 0.3s; }
-  .menu-expanded .all-content-wrapper-inner {
-    left: 270px; }
-
-#main-nav-toggle {
-  display: none;
-  padding: 5px 10px;
-  color: #000;
-  text-decoration: none;
-  background: #ccc; }
-  #main-nav-toggle:hover, #main-nav-toggle:active {
-    background: #ddd; }
-
-#main-nav li {
-  position: relative;
-  float: left;
-  margin: 0 1px 0 0; }
-  #main-nav li .link-wrap {
-    display: block;
-    height: 28px; }
-  #main-nav li a {
-    display: block;
-    height: 18px;
-    padding: 5px 10px;
-    color: #000;
-    text-decoration: none;
-    background-color: #ccc;
-    transition: background-color 0.3s; }
-    #main-nav li a:hover, #main-nav li a:active {
-      background-color: #ddd; }
-  #main-nav li ul {
-    transition: opacity 0.1s;
-    position: absolute;
-    top: 28px;
-    left: -9999px;
-    z-index: 1000;
-    width: 150px;
-    opacity: 0;
-    background: #ddd; }
-    #main-nav li ul li {
-      float: none;
-      margin: 0;
-      height: auto;
-      border-top: 1px #fff solid; }
-      #main-nav li ul li a {
-        display: block;
-        height: auto;
-        padding: 5px 10px;
-        color: #000;
-        text-decoration: none;
-        background: none; }
-        #main-nav li ul li a:hover, #main-nav li ul li a:active {
-          background: #eee; }
-      #main-nav li ul li.menu-item-has-children > .link-wrap {
-        position: relative;
-        padding: 0 31px 0 0; }
-        #main-nav li ul li.menu-item-has-children > .link-wrap .arrow {
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 2;
-          display: block;
-          width: 30px;
-          background: #dddddd url(../images/nav-arrow-right.png) no-repeat 50% 50%;
-          border-left: 1px #fff solid;
-          cursor: pointer; }
-          #main-nav li ul li.menu-item-has-children > .link-wrap .arrow:hover {
-            background-color: #eee; }
-    #main-nav li ul ul {
-      display: none;
-      left: 150px;
-      top: -1px;
-      border-left: 1px #fff solid; }
-
-/* === NAV > 640 ======================================================== */
-@media (min-width: 641px) {
-  #main-nav > li:hover > .link-wrap a {
-    background-color: #ddd; }
-  #main-nav > li:hover > ul {
-    display: block !important;
-    left: 0;
-    opacity: 1; }
-  #main-nav ul > li.menu-item-has-children:hover {
-    background-color: #eee; }
-    #main-nav ul > li.menu-item-has-children:hover > .link-wrap a {
-      background-color: #eee; }
-    #main-nav ul > li.menu-item-has-children:hover > .link-wrap .arrow {
-      background-color: #eee; }
-    #main-nav ul > li.menu-item-has-children:hover > ul {
-      display: block;
-      opacity: 1; } }
-/* nav < 640 */
-/* === NAV < 640 ======================================================== */
-@media (max-width: 640px) {
-  #main-nav-toggle {
-    display: inline-block; }
-
-  #main-nav {
-    position: absolute;
-    left: -270px;
-    top: 0;
-    width: 270px; }
-    #main-nav li {
-      position: static;
-      float: none;
-      margin: 0 0 1px; }
-      #main-nav li:first-child {
-        border-top: none; }
-      #main-nav li.menu-item-has-children .link-wrap {
-        position: relative;
-        padding: 0 31px 0 0; }
-      #main-nav li.menu-item-has-children .arrow {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 2;
-        display: block;
-        width: 30px;
-        background: #cccccc url(../images/nav-arrow-down.png) no-repeat 50% 50%;
-        cursor: pointer; }
-        #main-nav li.menu-item-has-children .arrow:hover {
-          background-color: #ddd; }
-      #main-nav li.menu-item-has-children ul {
-        display: none;
-        position: static;
-        width: auto;
-        padding: 0;
-        opacity: 1;
-        border-top: 1px #fff solid; }
-        #main-nav li.menu-item-has-children ul li .link-wrap {
-          padding: 0; }
-        #main-nav li.menu-item-has-children ul li a {
-          padding: 5px 10px 5px 20px; }
-        #main-nav li.menu-item-has-children ul li .arrow {
-          background-image: url(../images/nav-arrow-right.png);
-          background-color: transparent; }
-        #main-nav li.menu-item-has-children ul li.menu-item-has-children > .link-wrap .arrow {
-          background-image: url(../images/nav-arrow-down.png); }
-        #main-nav li.menu-item-has-children ul ul {
-          margin-left: 20px;
-          border-left: none; }
-      #main-nav li.menu-item-has-children.expanded.menu-item-has-children > .link-wrap .arrow {
-        background-image: url(../images/nav-arrow-up.png); } }
-/* nav < 640 */
-/* =============================================================================
-   PAGE BODY
-============================================================================= */
 /* =============================================================================
    MAIN COLUMN
 ============================================================================= */
@@ -622,13 +463,13 @@ img {
   /* === BASIC TEXT STYLES ================================================ */ }
   .main h1 {
     margin: 0 0 .3em;
-    font-size: 2em; }
+    font: 2em Georgia, "Times New Roman", serif; }
   .main h2 {
     margin: 1.5em 0 .3em;
-    font-size: 1.6em; }
+    font: 1.6em Georgia, "Times New Roman", serif; }
   .main h3 {
     margin: 1.5em 0 .3em;
-    font-size: 1.3em; }
+    font: 1.3em Georgia, "Times New Roman", serif; }
   .main h4 {
     margin: 1.5em 0 .3em;
     font-size: 1em; }
@@ -686,4 +527,7 @@ img.aligncenter, .wp-caption.aligncenter {
 ============================================================================= */
 /* =============================================================================
    SPECIFIC PAGE IMPORTS
+============================================================================= */
+/* =============================================================================
+    HOME PAGE
 ============================================================================= */

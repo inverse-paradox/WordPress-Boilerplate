@@ -21,15 +21,15 @@ get_header(); ?>
                 
                 <?php if( get_previous_posts_link() ) : ?>
                 
-                	<span class="pagination button alignleft"><?php previous_posts_link('&laquo; Newer Entries'); ?></span>
+                    <span class="pagination button alignleft"><?php previous_posts_link('&laquo; Newer Entries'); ?></span>
                 
                 <?php endif; ?>
                 
                 <?php if( get_next_posts_link() ) : ?>
                 
-                	<span class="pagination button alignright"><?php next_posts_link('Older Entries &raquo;'); ?></span>
-                	
-               	<?php endif; ?>
+                    <span class="pagination button alignright"><?php next_posts_link('Older Entries &raquo;'); ?></span>
+                    
+                <?php endif; ?>
 
             <?php else: ?>
 

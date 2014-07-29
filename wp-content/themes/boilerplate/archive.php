@@ -24,43 +24,57 @@ if (is_category()) { // category
 
 get_header(); ?>
 
-<?php if (have_posts()): ?>
+<div class="main-content-wrapper">
+    <div class="content-wrapper">
 
-    <?php if ($title): ?>
-        <h1><?php echo $title; ?></h1>
-    <?php endif; ?>
+        <main class="main" role="main">
 
-    <?php while (have_posts()): the_post(); ?>
+            <?php if (have_posts()): ?>
 
-        <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-            <div class="topmeta">
-                <span class="date"><?php echo the_time("F jS, Y"); ?></span>
-            </div><!--/topmeta-->
-            <div class="postcontent">
-                <?php the_excerpt(); ?>
-                <?php wp_link_pages(); ?>
-            </div><!--/postcontent-->
-            <?php if (get_the_tags()) { ?><span class="tags"><?php the_tags('', ', ', ''); ?></span><?php } ?>
-            <div class="bottommeta">
-                <span class="category"><?php the_category(',') ?> </span>
-                <span class="comments"><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)')); ?></span>
-            </div><!--/bottommeta-->
-        </div><!--/post-->
+                <section>
 
-    <?php endwhile; ?>
+                    <?php if ($title): ?>
+                        <h1><?php echo $title; ?></h1>
+                    <?php endif; ?>
 
-    <div class="navigation">
-        <div class="alignleft"><?php next_posts_link('&laquo; Older Posts') ?></div>
-        <div class="alignright"><?php previous_posts_link('Newer Posts &raquo;') ?></div>
-    </div>
+                    <?php while (have_posts()): the_post(); ?>
 
-<?php else: ?>
+                        <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                            <div class="topmeta">
+                                <span class="date"><?php echo the_time("F jS, Y"); ?></span>
+                            </div><!--/topmeta-->
+                            <div class="postcontent">
+                                <?php the_excerpt(); ?>
+                                <?php wp_link_pages(); ?>
+                            </div><!--/postcontent-->
+                            <?php if (get_the_tags()) { ?><span class="tags"><?php the_tags('', ', ', ''); ?></span><?php } ?>
+                            <div class="bottommeta">
+                                <span class="category"><?php the_category(',') ?> </span>
+                                <span class="comments"><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)')); ?></span>
+                            </div><!--/bottommeta-->
+                        </div><!--/post-->
 
-    <?php get_template_part('notfound'); ?>
+                    <?php endwhile; ?>
 
-<?php endif; ?>
+                    <div class="navigation">
+                        <div class="alignleft"><?php next_posts_link('&laquo; Older Posts') ?></div>
+                        <div class="alignright"><?php previous_posts_link('Newer Posts &raquo;') ?></div>
+                    </div>
 
-<?php get_sidebar(); ?>
+                </section>
+
+            <?php else: ?>
+
+                <?php get_template_part('notfound'); ?>
+
+            <?php endif; ?>
+
+        </main><!--/main-->
+
+        <?php get_sidebar(); ?>
+
+    </div><!--/content-wrapper-->
+</div><!--/main-content-wrapper-->
 
 <?php get_footer(); ?>
