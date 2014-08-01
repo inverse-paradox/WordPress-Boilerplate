@@ -12,11 +12,11 @@ if (is_category()) { // category
 } else if (is_post_type_archive()) {// custom post type
     $title = post_type_archive_title('', false);
 } else if (is_day()) { // date -> day
-    $title = the_time('F j, Y');
+    $title = get_the_time('F j, Y');
 } else if (is_month()) { // date -> month
-    $title = the_time('F, Y');
+    $title = get_the_time('F, Y');
 } else if (is_year()) { // date -> year
-    $title = the_time('Y');
+    $title = get_the_time('Y');
 } else if (is_author()) { // author
     $author = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
     $title = $author->display_name;
