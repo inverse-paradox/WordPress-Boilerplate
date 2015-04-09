@@ -339,7 +339,6 @@ table {
   src: url("../fonts/testfont.eot?#iefix") format("embedded-opentype"), url("../fonts/testfont.woff") format("woff"), url("../fonts/testfont.ttf") format("truetype"), url("../fonts/testfont.svg#testfont") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 /* ===========================================================
    MIXINS & EXTENDS
 =========================================================== */
@@ -382,14 +381,14 @@ body {
   min-width: 320px;
   font: 12px Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  color: black;
+  color: #000;
   background-color: #fff; }
 
 a {
-  color: blue;
+  color: #0000ff;
   text-decoration: underline; }
   a:hover, a:active {
-    color: black; }
+    color: #000; }
 
 input[type=text],
 input[type=password],
@@ -410,18 +409,18 @@ select,
 textarea {
   padding: 3px;
   font: 12px Arial, Helvetica, sans-serif;
-  color: black;
+  color: #000;
   background: #fff;
   border: 1px #ccc solid; }
 
 input[type=submit] {
   padding: 3px 6px;
   font: 12px Arial, Helvetica, sans-serif;
-  color: black;
+  color: #000;
   border: 1px #ccc solid;
   border-radius: 5px;
-  background: "#ffffff";
-  background-image: url(data:image/svg+xml,%3c%3fxml%20version%3d%221%2e0%22%3f%3e%3csvg%20xmlns%3d%22http%3a%2f%2fwww%2ew3%2eorg%2f2000%2fsvg%22%20width%3d%22100%25%22%20height%3d%22100%25%22%3e%3cdefs%3e%3clinearGradient%20id%3d%22G%22%20x2%3d%220%25%22%20y2%3d%22100%25%22%3e%3cstop%20style%3d%22stop%2dcolor%3a%23ffffff%22%20offset%3d%220%25%22%2f%3e%3cstop%20style%3d%22stop%2dcolor%3a%23eeeeee%22%20offset%3d%22100%25%22%2f%3e%3c%2flinearGradient%3e%3c%2fdefs%3e%3crect%20width%3d%22100%25%22%20height%3d%22100%25%22%20fill%3d%22url%28%23G%29%22%2f%3e%3c%2fsvg%3e);
+  background: #ffffff;
+  background-image: url(data:image/svg+xml,%3c%3fxml%20version%3d%221%2e0%22%3f%3e%3csvg%20xmlns%3d%22http%3a%2f%2fwww%2ew3%2eorg%2f2000%2fsvg%22%20width%3d%22100%25%22%20height%3d%22100%25%22%3e%3cdefs%3e%3clinearGradient%20id%3d%22G%22%20x2%3d%220%25%22%20y2%3d%22100%25%22%3e"%3cstop%20style%3d%22stop%2dcolor%3a%23"ffffff"%22%20offset%3d%22"0"%25%22%2f%3e""%3cstop%20style%3d%22stop%2dcolor%3a%23"eeeeee"%22%20offset%3d%22"100"%25%22%2f%3e"%3c%2flinearGradient%3e%3c%2fdefs%3e%3crect%20width%3d%22100%25%22%20height%3d%22100%25%22%20fill%3d%22url%28%23G%29%22%2f%3e%3c%2fsvg%3e);
   background-image: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
   background-image: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
@@ -531,3 +530,5 @@ img.aligncenter, .wp-caption.aligncenter {
 /* =============================================================================
     HOME PAGE
 ============================================================================= */
+
+/*# sourceMappingURL=global.css.map */

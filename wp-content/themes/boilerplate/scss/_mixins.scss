@@ -54,10 +54,10 @@
    linear-gradient-svg('to bottom', 'ffffff', '0', '000000', '100')
 ============================================================================= */
 @mixin linear-gradient-svg($direction, $color1, $offset1, $color2, $offset2) {
-    $color1css: '#'#{$color1}'';
-    $color2css: '#'#{$color2}'';
-    $offset1css: ''#{$offset1}'%';
-    $offset2css: ''#{$offset2}'%';
+    $color1css: unquote('#'+$color1);
+    $color2css: unquote('#'+$color2);
+    $offset1css: unquote('#{$offset1}%');
+    $offset2css: unquote('#{$offset2}%');
     $color1svg: '%3cstop%20style%3d%22stop%2dcolor%3a%23'#{$color1}'%22%20offset%3d%22'#{$offset1}'%25%22%2f%3e';
     $color2svg: '%3cstop%20style%3d%22stop%2dcolor%3a%23'#{$color2}'%22%20offset%3d%22'#{$offset2}'%25%22%2f%3e';
     $angle_webkit: 'left top, left bottom';
