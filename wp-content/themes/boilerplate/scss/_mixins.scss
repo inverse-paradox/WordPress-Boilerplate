@@ -58,8 +58,8 @@
     $color2css: unquote('#'+$color2);
     $offset1css: unquote('#{$offset1}%');
     $offset2css: unquote('#{$offset2}%');
-    $color1svg: '%3cstop%20style%3d%22stop%2dcolor%3a%23'#{$color1}'%22%20offset%3d%22'#{$offset1}'%25%22%2f%3e';
-    $color2svg: '%3cstop%20style%3d%22stop%2dcolor%3a%23'#{$color2}'%22%20offset%3d%22'#{$offset2}'%25%22%2f%3e';
+    $color1svg: '%3cstop%20style%3d%22stop%2dcolor%3a%23#{$color1}%22%20offset%3d%22#{$offset1}%25%22%2f%3e';
+    $color2svg: '%3cstop%20style%3d%22stop%2dcolor%3a%23#{$color2}%22%20offset%3d%22#{$offset2}%25%22%2f%3e';
     $angle_webkit: 'left top, left bottom';
     $angle_old: 'top';
     $angle_svg: '%20x2%3d%220%25%22%20y2%3d%22100%25%22';
