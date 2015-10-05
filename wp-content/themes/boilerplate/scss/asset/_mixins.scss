@@ -20,14 +20,6 @@
     text-indent: -9999px;
 }
 
-
-/* =============================================================================
-   2-COLOR LINEAR GRADIENT
-   Can take actual color and percentage values
-   (e.g. hex codes, rgba, variables, color functions)
-   Uses ms filter in IE9 (somewhat buggy, will have square corners)
-   linear-gradient(to bottom, #ffffff, 0%, darken(#ffffff, 20%), 100%)
-============================================================================= */
 @mixin linear-gradient($direction, $color1, $offset1, $color2, $offset2) {
     $angle_webkit: 'left top, left bottom';
     $angle_old: 'top';
@@ -47,19 +39,13 @@
     }
 }
 
-/* =============================================================================
-   2-COLOR LINEAR GRADIENT W/ SVG
-   Takes hex codes (without #) and numbers (without %)
-   Uses svg in IE9 (better support than filter, supports rounded corners)
-   linear-gradient-svg('to bottom', 'ffffff', '0', '000000', '100')
-============================================================================= */
-@mixin linear-gradient-svg($direction, $color1, $offset1, $color2, $offset2) {
-    $color1css: unquote('#'+$color1);
-    $color2css: unquote('#'+$color2);
-    $offset1css: unquote('#{$offset1}%');
-    $offset2css: unquote('#{$offset2}%');
-    $color1svg: '%3cstop%20style%3d%22stop%2dcolor%3a%23#{$color1}%22%20offset%3d%22#{$offset1}%25%22%2f%3e';
-    $color2svg: '%3cstop%20style%3d%22stop%2dcolor%3a%23#{$color2}%22%20offset%3d%22#{$offset2}%25%22%2f%3e';
+@mixin grad($direction, $color1, $offset1, $color2, $offset2) {
+    $color1css: '#'+$color1+'';
+    $color2css: '#'+$color2+'';
+    $offset1css: ''+$offset1+'%';
+    $offset2css: ''+$offset2+'%';
+    $color1svg: '%3cstop%20style%3d%22stop%2dcolor%3a%23'+$color1+'%22%20offset%3d%22'+$offset1+'%25%22%2f%3e';
+    $color2svg: '%3cstop%20style%3d%22stop%2dcolor%3a%23'+$color2+'%22%20offset%3d%22'+$offset2+'%25%22%2f%3e';
     $angle_webkit: 'left top, left bottom';
     $angle_old: 'top';
     $angle_svg: '%20x2%3d%220%25%22%20y2%3d%22100%25%22';
@@ -80,4 +66,41 @@
     .lte-ie8 & {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color1css}', endColorstr='#{$color2css}', GradientType=0);
     }
+}
+
+@mixin transition($prop, $time, $ease: ease) {
+    -webkit-transition: $prop $time $ease;
+    -moz-transition: $prop $time $ease;
+    -o-transition: $prop $time $ease;
+     transition: $prop $time $ease;
+} /*ex: @include transition(color, 0.1s); */
+
+@mixin rotate($deg) {
+    -moz-transform: rotate(#{$deg}deg);
+    -webkit-transform: rotate(#{$deg}deg);
+    transform: rotate(#{$deg}deg);
+} /*ex: @include rotate(90); */
+
+@mixin valign {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin boxsize {
+   -moz-box-sizing:    border-box;   /* Firefox 1, probably can drop this */
+   -webkit-box-sizing: border-box;   /* Safari 3-4, also probably droppable */
+    box-sizing:        border-box;   /* Everything else */
+}
+
+@mixin bp($point) {
+    @media (max-width: $point) { @content; }
+}
+
+@mixin bpmin($point) {
+    @media (min-width: $point) { @content; }
 }

@@ -1,0 +1,54 @@
+/* ===========================================================
+   DEFAULTS
+=========================================================== */
+body {
+    font-size: $f-size;
+    line-height: $f-line-height;
+    font-family: $f-default;
+    color: $c-text;
+    background-color: $c-background;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+}
+
+a {
+    color: $c-link;
+    
+    &:hover, &:active {
+        color: $c-text;
+    }
+}
+
+input, select, textarea {
+    font: $f-default $f-size;
+    color: $c-text;
+    background: #fff;
+    border: 1px #ccc solid;
+}
+
+input[type=submit] {
+    padding: 3px 6px;
+    font: $f-size $f-default;
+    color: $c-text;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+
+/* ===========================================================
+   PAGE WRAPPER
+=========================================================== */
+.container {
+    margin: 0 auto;
+    max-width: $page-width;
+    width: 96%;
+    @extend %clearfix;
+}

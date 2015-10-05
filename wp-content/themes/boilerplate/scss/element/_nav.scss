@@ -1,0 +1,36 @@
+/* ===========================================================
+   MAIN NAV
+=========================================================== */
+
+.nav {
+    @extend %clearfix;
+    width: 100%;
+    float: left;
+    position: relative;
+
+    ul {
+        float: left;
+        position: relative;
+
+        li {
+            float: left;
+            position: relative;
+
+            &+li {                
+                margin-left: 10px;
+                padding-left: 10px;
+                border-left: 1px solid $c-menu-border;
+            }
+
+            a {
+                float: left;
+                font: 18px/18px $f-special;
+                color: $c-menu;
+            }
+
+            &.current-menu-item > a, a:hover {
+                color: $c-hover;
+            }
+        }
+    }
+}
