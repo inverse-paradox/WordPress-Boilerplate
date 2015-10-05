@@ -97,6 +97,21 @@
     box-sizing:        border-box;   /* Everything else */
 }
 
+@mixin placeholder {
+    &::-webkit-input-placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+}
+
+@mixin vendorize( $property, $value ) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
 @mixin bp($point) {
     @media (max-width: $point) { @content; }
 }
