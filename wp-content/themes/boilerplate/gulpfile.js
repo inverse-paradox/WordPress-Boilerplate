@@ -9,6 +9,23 @@ var concat = require( 'gulp-concat' );
 var uglify = require( 'gulp-uglify' );
 var rename = require( 'gulp-rename' );
 var sourcemaps = require( 'gulp-sourcemaps' );
+var filter = require( 'gulp-filter' );
+
+// Move ip-* bower components
+gulp.task( 'bowermove', function() {
+	var filter_js = filter('ip-*/*.js', {restore: true});
+	var filter_scss = filter('ip-*/*.scss', {restore: true});
+
+	return gulp.src('./bower_components/**')
+		.pipe( filter_js )
+		.pipe( rename({dirname: ''}) )
+		.pipe( gulp.dest('./js/vendor', {overwrite:false}) )
+		.pipe( filter_js.restore )
+		.pipe( filter_scss )
+		.pipe( rename({dirname: ''}) )
+		.pipe( gulp.dest('./scss/library', {overwrite:false}) )
+		.pipe( filter_scss.restore );
+});
 
 // Imagemin Task
 gulp.task( 'imagemin', function() {
@@ -43,10 +60,11 @@ gulp.task('scripts', function() {
 
 // Watch Files For Changes
 gulp.task( 'watch', function() {
+	gulp.watch( ['bower_components'], ['bowermove'] );
 	gulp.watch( ['js/vendor/**/*.js'], [ 'scripts'] );
 	gulp.watch( ['scss/**/*.scss'], ['sass'] );
 	gulp.watch( ['images/**/*', '!images/min/**/*'], ['imagemin'] );
 });
 
 // Default Task
-gulp.task( 'default', [ 'imagemin', 'sass', 'scripts', 'watch'] );
+gulp.task( 'default', [ 'bowermove', 'imagemin', 'sass', 'scripts', 'watch'] );
