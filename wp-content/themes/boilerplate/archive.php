@@ -24,7 +24,7 @@ if (is_category()) { // category
 
 get_header(); ?>
 
-<main class="content" role="main">
+<main class="main" role="main">
 
  <?php if (have_posts()): ?>
 
