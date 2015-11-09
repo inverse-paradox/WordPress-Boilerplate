@@ -11,8 +11,13 @@ var rename = require( 'gulp-rename' );
 var sourcemaps = require( 'gulp-sourcemaps' );
 var filter = require( 'gulp-filter' );
 
+gulp.task(bowermove);
+gulp.task(images);
+gulp.task(styles);
+gulp.task(scripts);
+
 // Move ip-* bower components
-gulp.task( 'bowermove', function() {
+function bowermove() {
 	var filter_js = filter('ip-*/*.js', {restore: true});
 	var filter_scss = filter('ip-*/*.scss', {restore: true});
 
@@ -25,10 +30,10 @@ gulp.task( 'bowermove', function() {
 		.pipe( rename({dirname: ''}) )
 		.pipe( gulp.dest('./scss/library', {overwrite:false}) )
 		.pipe( filter_scss.restore );
-});
+}
 
-// Imagemin Task
-gulp.task( 'imagemin', function() {
+// images Task
+function images() {
 	return gulp.src( ['images/**/*.jpg', 'images/**/*.png', 'images/**/*.gif', '!images/min/**/*'] )
 		.pipe(imagemin({
 			progressive: true,
@@ -36,19 +41,19 @@ gulp.task( 'imagemin', function() {
 			use: [pngquant()]
 		}))
 		.pipe( gulp.dest( './images/min' ) );
-});
+}
 
-// Compile Sass
-gulp.task( 'sass', function() {
+// Compile styles
+function styles() {
 	return gulp.src('scss/**/*.scss')
 		.pipe( sourcemaps.init( { loadMaps: true } ) )
 		.pipe( sass.sync({ outputStyle : 'compressed' }).on('error', sass.logError) )
 		.pipe( sourcemaps.write( '../css' ) )
 		.pipe(gulp.dest('css'));
-});
+}
 
 // Concatenate & Minify JS
-gulp.task('scripts', function() {
+function scripts() {
 	return gulp.src( ['js/lib/jquery.cycle2.min.js', 'js/vendor/*.js' ])
 		.pipe( concat('theme.js') )
 		.pipe( sourcemaps.init( { loadMaps: true } ) )
@@ -56,15 +61,26 @@ gulp.task('scripts', function() {
 		.pipe( uglify() )
 		.pipe( sourcemaps.write( '../js' ) )
 		.pipe( gulp.dest('js') );
-});
+}
 
 // Watch Files For Changes
-gulp.task( 'watch', function() {
-	gulp.watch( ['bower_components'], ['bowermove'] );
-	gulp.watch( ['js/vendor/**/*.js'], [ 'scripts'] );
-	gulp.watch( ['scss/**/*.scss'], ['sass'] );
-	gulp.watch( ['images/**/*', '!images/min/**/*'], ['imagemin'] );
+gulp.task( 'watch:bower', function() {
+	gulp.watch('bower_components', bowermove);
 });
 
+gulp.task( 'watch:scripts', function() {
+	gulp.watch( 'js/vendor/**/*.js', scripts);
+});
+
+gulp.task( 'watch:sass', function() {
+	gulp.watch( ['scss/**/*.scss'], styles);
+});
+
+gulp.task( 'watch:images', function() {
+	gulp.watch( ['images/**/*', '!images/min/**/*'], images);
+});
+
+gulp.task('watch', gulp.parallel('watch:bower', 'watch:scripts', 'watch:sass', 'watch:images'));
+
 // Default Task
-gulp.task( 'default', [ 'bowermove', 'imagemin', 'sass', 'scripts', 'watch'] );
+gulp.task( 'default', gulp.series('bowermove', 'images', 'styles', 'scripts', 'watch'));

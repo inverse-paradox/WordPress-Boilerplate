@@ -1,10 +1,11 @@
 {
 	"name": "wordpress-responsive-boilerplate",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Inverse Paradox Responsive Boilerplate Theme",
 	"main": "gulpfile.js",
 	"devDependencies": {
-		"gulp": "~3.9.0",
+		"bower": "~1.6.4",
+		"gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",
 		"gulp-jshint": "~1.11.2",
 		"gulp-sass": "~2.0.1",
 		"gulp-watch": "~4.3.5",
