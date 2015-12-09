@@ -54,7 +54,7 @@ function styles() {
 
 // Concatenate & Minify JS
 function scripts() {
-	return gulp.src( ['js/lib/jquery.cycle2.min.js', 'js/vendor/*.js' ])
+	return gulp.src( ['js/lib/*.js', 'js/vendor/*.js' ])
 		.pipe( concat('theme.js') )
 		.pipe( sourcemaps.init( { loadMaps: true } ) )
 		.pipe( rename('theme.min.js') )

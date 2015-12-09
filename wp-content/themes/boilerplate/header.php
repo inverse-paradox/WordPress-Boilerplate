@@ -69,4 +69,4 @@
 
 <div class="page-wrap">
 	<div class="container">
-		<div class="page-wrap">
+		<div class="content-wrap">
