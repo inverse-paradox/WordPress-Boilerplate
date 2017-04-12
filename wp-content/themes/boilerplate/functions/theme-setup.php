@@ -55,7 +55,7 @@ add_filter('wp_title', 'ip_alter_title', 10, 2);
 function ip_scripts_styles()
 {
     wp_enqueue_script('cycle', get_template_directory_uri() . '/js/jquery.cycle2.min.js',array('jquery'), null, true);
-    wp_enqueue_script('ip_script', get_template_directory_uri() . '/js/theme.js',array('jquery'), null, true);
+    wp_enqueue_script('ip_script', get_template_directory_uri() . '/js/theme.min.js',array('jquery'), null, true);
     wp_enqueue_style('ip_style', get_template_directory_uri() . '/css/global.css', false, null);
     if (is_singular('post')){
         wp_enqueue_script('comment-reply');
