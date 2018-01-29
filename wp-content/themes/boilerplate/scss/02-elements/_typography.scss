@@ -1,0 +1,71 @@
+/* =============================================================================
+    TYPOGRAPHY
+============================================================================= */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $default-font-color;
+	font-family: $default-font;
+	line-height: $default-line-height;
+} // body, button, input, select, textarea
+
+body {
+	font-size: $default-font-size;
+    background-color: #fff;
+}
+
+.main {
+	// Global Header Resets.
+	@for $i from 1 through 6 {
+		h#{$i} {
+			margin-top: 0;
+			font-family: $default-font-heading;
+		} // h#{$i}
+	} // end @for
+
+	h1,
+	.h1 {
+		margin: 0 0 .3em;
+		font-size: 2em;
+	} // h1, .h1
+
+	h2,
+	.h2 {
+		margin: 1.5em 0 .3em;
+	    font-size: 1.6em;
+	} // h2, .h2
+
+	h3,
+	.h3 {
+		margin: 1.5em 0 .3em;
+		font-size: 1.3em;
+	} // h3, .h3
+
+	h4,
+	.h4 {
+		margin: 1.5em 0 .3em;
+		font-size: 1em;
+	} // h4, .h4
+
+	h5,
+	.h5 {
+
+	}  // h5, .h5
+
+	h6,
+	.h6 {
+
+	} // h6, .h6
+
+	p {
+		margin: 0 0 1em 0;
+	} // p
+
+	blockquote,
+	q {
+		margin: 0 4em 1em;
+	} // blockquote, q
+}// main

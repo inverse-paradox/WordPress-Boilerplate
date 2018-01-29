@@ -1,198 +1,35 @@
-@import "normalize";
-@import "fonts";
-@import "mixins";
-@import "var";
+/* =============================================================================
+   CONFIGURATION
+============================================================================= */
+
+@import "01-config/normalize";
+@import "01-config/fonts";
+@import "01-config/mixins-extends/mixin-index";
+@import "01-config/var";
 
 
 /* =============================================================================
    DEFAULTS
 ============================================================================= */
-body {
-    min-width: 320px;
-    font: $default-font-size $default-font;
-    line-height: 1.5;
-    color: $default-font-color;
-    background-color: #fff;
-}
-a {
-    color: $default-link-color;
-    text-decoration: underline;
-    &:hover, &:active {
-        color: $default-font-color;
-    }
-}
-input[type=text],
-input[type=password],
-input[type=search],
-input[type=email], 
-input[type=url],
-input[type=tel],
-input[type=number],
-input[type=range],
-input[type=date],
-input[type=month],
-input[type=week],
-input[type=time],
-input[type=datetime],
-input[type=datetime-local],
-input[type=color],  
-select, 
-textarea {
-    padding: 3px;
-    font: $default-font-size $default-font;
-    color: $default-font-color;
-    background: #fff;
-    border: 1px #ccc solid;
-}
-input[type=submit] {
-    padding: 3px 6px;
-    font: $default-font-size $default-font;
-    color: $default-font-color;
-    border: 1px #ccc solid;
-    border-radius: 5px;
-    @include linear-gradient-svg('to bottom', 'ffffff', '0', 'eeeeee', '100');
-    cursor: pointer;
-}
-br.clear {
-    clear: both;
-    height: 0;
-    overflow: hidden;
-}
-img {
-    max-width: 100%;
-    height: auto;
-}
+
+@import '02-elements/typography';
+@import '02-elements/alignments';
+@import '02-elements/html-elements';
+@import '02-elements/media';
+@import '02-elements/links';
+@import '02-elements/layout';
 
 
-/* =============================================================================
-    WRAPPERS
-============================================================================= */
-/* .page-wrapper { */
-.content-wrapper {
-    margin: 0 auto;
-    width: 94%;
-    max-width: 1140px;
-    @extend %clearfix;
-}
-
-.main-content-wrapper {
-    @extend %clearfix;
-}
-
-
-/* =============================================================================
-   HEADER
-============================================================================= */
-.header {
-    @extend %clearfix;
-}
-
-
-/* =============================================================================
-   MAIN NAV
-============================================================================= */
-.main-nav {
-    @extend %clearfix;
-}
-
-
-/* =============================================================================
-   MAIN COLUMN
-============================================================================= */
-.main {
-    @extend %clearfix;
-
-    /* === BASIC TEXT STYLES ================================================ */
-    h1 {
-        margin: 0 0 .3em;
-        font: 2em $heading-font;
-    }
-    h2 {
-        margin: 1.5em 0 .3em;
-        font: 1.6em $heading-font;
-    }
-    h3 {
-        margin: 1.5em 0 .3em;
-        font: 1.3em $heading-font;
-    }
-    h4 {
-        margin: 1.5em 0 .3em;
-        font-size: 1em;
-    }
-    p {
-        margin: 0 0 1em;
-    }
-    ul {
-        margin: 0 0 1em 1.5em;
-        list-style: disc;
-        ul {
-            list-style: square;
-        }
-    }
-    ol {
-        margin: 0 0 1em 2.5em;
-    }
-    li {
-        margin: 0 0 .5em;
-    }
-    blockquote {
-        margin: 0 4em 1em;
-    }
-}
-
-/* === DEFAULT WORDPRESS STYLES ============================================= */
-.aligncenter {
-    text-align: center;
-}
-.alignleft {
-    float: left;
-}
-.alignright {
-    float: right;
-}
-img.alignleft, .wp-caption.alignleft {
-    margin: 0 12px 4px 0;
-}
-img.alignright, .wp-caption.alignright {
-    margin: 0 0 4px 12px;
-}
-img.aligncenter, .wp-caption.aligncenter {
-    display: block;
-    margin: 0 auto;
-}
-.wp-caption {
-    margin: 10px 0;
-    padding: 4px 0 0;
-    text-align: center;
-    background-color: #f3f3f3;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    .wp-caption-text {
-        padding: 0 4px 5px;
-        font-size: 11px;
-        line-height: 17px;
-    }
-}
-
-
-/* =============================================================================
-   SIDE COLUMN
-============================================================================= */
-.sidebar {
-    @extend %clearfix;
-}
-
-
-/* =============================================================================
-   FOOTER
-============================================================================= */
-.footer {
-    @extend %clearfix;
-}
+@import '02-elements/header';
+@import '02-elements/navigation';
+@import '02-elements/main';
+@import '02-elements/sidebar';
+@import '02-elements/footer';
 
 
 /* =============================================================================
    SPECIFIC PAGE IMPORTS
 ============================================================================= */
+
 @import 'home';
-//@import 'blog';
+@import 'blog';

@@ -1,0 +1,14 @@
+/* =============================================================================
+    WRAPPERS
+============================================================================= */
+/* .page-wrapper { */
+.content-wrapper {
+	@extend %clearfix;
+	width: $default-container-width;
+    max-width: $default-container-max-width;
+    margin: 0 auto;
+}
+
+.main-content-wrapper {
+    @extend %clearfix;
+}
