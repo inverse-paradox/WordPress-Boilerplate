@@ -1,13 +1,10 @@
 /* =============================================================================
-   HEADER
+    BANNER
 ============================================================================= */
-.header {
+.banner {
     @extend %clearfix;
+    min-height: $banner-height;
     width: 100%;
     float: left;
     position: relative;
-
-    .logo {
-    	float: left;
-    }
 }

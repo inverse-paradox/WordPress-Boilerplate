@@ -3,4 +3,8 @@
 ============================================================================= */
 .footer {
     @extend %clearfix;
+    width: 100%;
+    float: left;
+    position: relative;
+    min-height: 100px;
 }
