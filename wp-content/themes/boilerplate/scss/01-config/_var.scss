@@ -1,0 +1,52 @@
+/* =============================================================================
+   TYPOGRAPHY
+============================================================================= */
+/// Define global fonts
+$default-font: 'Open Sans', sans-serif;
+$default-font-heading: Georgia, Times, 'Times New Roman', serif;
+
+//Define Global Font Size and Color
+$default-font-size: 16px;
+$default-font-color: #000;
+
+/// Define global line-height.
+$default-line-height: 1.625;
+
+/* =============================================================================
+   BRANDING COLORS
+============================================================================= */
+
+$c-link-color: #0000ff;
+$c-link-color-hover: $c-link-color;
+
+$c-hr-color: #000;
+
+$c-button-background: #000;
+$c-button-background-hover: #eee;
+$c-button-text: #fff;
+
+/* =============================================================================
+   LAYOUT
+============================================================================= */
+
+$default-container-max-width: 1140px;
+$default-container-width: 94%;
+
+/* =============================================================================
+   BLOG COLORS
+============================================================================= */
+$post-meta-bg: #f2f2f2;
+$post-meta-border: #e5e5e5;
+$comment-bg: #fafafa;
+$comment-border: #e0e0e0;
+$comment-alt-bg: #f2f2f2;
+$comment-alt-border: #d9d9d9;
+$comment-meta-border: #e5e5e5;
+
+/* =============================================================================
+   TRANSITIONS
+============================================================================= */
+$transition-timing: 0.5s;
+
+/// All transitions.
+$transition-all: all $transition-timing ease-in-out;
