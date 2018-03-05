@@ -16,7 +16,7 @@ add_theme_support('post-thumbnails');
 
 
 /* == remove admin bar =============================================================== */
-add_filter('show_admin_bar', '__return_false');
+//add_filter('show_admin_bar', '__return_false');
 
 
 /* == Removes the default link on attachments  ======================================= */
@@ -54,7 +54,8 @@ add_filter('wp_title', 'ip_alter_title', 10, 2);
 /* == Queue up all css & js files ==================================================== */
 function ip_scripts_styles()
 {
-    wp_enqueue_script('ip_script', get_template_directory_uri() . '/js/theme.js',array('jquery'), null, true);
+    wp_enqueue_script('cycle', get_template_directory_uri() . '/js/jquery.cycle2.min.js',array('jquery'), null, true);
+    wp_enqueue_script('ip_script', get_template_directory_uri() . '/js/theme.min.js',array('jquery'), null, true);
     wp_enqueue_style('ip_style', get_template_directory_uri() . '/css/global.css', false, null);
     if (is_singular('post')){
         wp_enqueue_script('comment-reply');
@@ -76,8 +77,25 @@ function ip_header_icons()
 add_action('wp_head', 'ip_header_icons');
 
 
-/* == add additional options pages ========== */
-// if (function_exists('register_options_page')) {
-//     register_options_page('Options Page Name');
-// }
+//add_image_size( 'homepost', 238, 125, true );
+
+
+//custom excerpt length
+function ip_custom_excerpt_length( $length ) {
+  return 30;
+}
+add_filter( 'excerpt_length', 'ip_custom_excerpt_length', 999 );
+
+
+//custom excerpt more
+function ip_new_excerpt_more( $more ) {
+  return ' <a class="more" href="'.get_permalink($post->ID).'">Read More</a>';
+}
+add_filter('excerpt_more', 'ip_new_excerpt_more');
+
+
+//add acf options page
+if(function_exists('acf_add_options_page')) { 
+    acf_add_options_page();
+}
 ?>
