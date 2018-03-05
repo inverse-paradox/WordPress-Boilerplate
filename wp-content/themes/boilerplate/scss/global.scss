@@ -22,14 +22,15 @@
 
 @import '02-elements/header';
 @import '02-elements/navigation';
+@import '02-elements/banner';
 @import '02-elements/main';
 @import '02-elements/sidebar';
 @import '02-elements/footer';
 
 
-/* =============================================================================
-   SPECIFIC PAGE IMPORTS
-============================================================================= */
+/* ===========================================================
+   SPECIFIC PAGES
+=========================================================== */
 
-@import 'home';
-@import 'blog';
+//@import "03-page-views/front-page";
+//@import '03-page-views/blog';
