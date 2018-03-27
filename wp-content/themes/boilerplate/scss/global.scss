@@ -1,36 +1,127 @@
-/* =============================================================================
-   CONFIGURATION
-============================================================================= */
+/* ===========================================================
+   ASSETS
+=========================================================== */
+@import "asset/normalize";
+@import "asset/fonts";
+@import "asset/var";
+@import "asset/mixins";
+@import "asset/typography";
 
-@import "01-config/normalize";
-@import "01-config/fonts";
-@import "01-config/mixins-extends/mixins-index";
-@import "01-config/var";
+
+/* ===========================================================
+   VENDORS
+=========================================================== */
+@import "vendor/wordpress";
 
 
-/* =============================================================================
+/* ===========================================================
    DEFAULTS
-============================================================================= */
-
-@import '02-elements/typography';
-@import '02-elements/alignments';
-@import '02-elements/html-elements';
-@import '02-elements/media';
-@import '02-elements/links';
-@import '02-elements/layout';
+=========================================================== */
+@import "element/defaults";
 
 
-@import '02-elements/header';
-@import '02-elements/navigation';
-@import '02-elements/banner';
-@import '02-elements/main';
-@import '02-elements/sidebar';
-@import '02-elements/footer';
+/* ===========================================================
+   HEADER
+=========================================================== */
+
+.header {
+    @extend %clearfix;
+    width: 100%;
+    float: left;
+    position: relative;
+
+    .logo {
+    	float: left;
+    }
+}
+
+/* ===========================================================
+   MAIN NAV
+=========================================================== */
+
+.nav {
+    @extend %clearfix;
+    width: 100%;
+    float: left;
+    position: relative;
+
+    ul {
+        float: left;
+        position: relative;
+
+        li {
+            float: left;
+            position: relative;
+
+            &+li {                
+                margin-left: 10px;
+                padding-left: 10px;
+                border-left: 1px solid $c-menu-border;
+            }
+
+            a {
+                float: left;
+                font: 18px/18px $f-special;
+                color: $c-menu;
+            }
+
+            &.current-menu-item > a, a:hover {
+                color: $c-hover;
+            }
+        }
+    }
+}
+
+/* ===========================================================
+   BANNER
+=========================================================== */
+
+@import "element/banner";
+
+/* ===========================================================
+   MAIN COLUMN
+=========================================================== */
+
+.page-wrap {
+    @extend %clearfix;
+    width: 100%;
+    float: left;
+    position: relative;
+    background: white;
+}
+
+
+/* ===========================================================
+   MAIN
+=========================================================== */
+.main {
+    @extend %clearfix;
+}
+
+
+/* ===========================================================
+   SIDEBAR
+=========================================================== */
+.sidebar {
+    @extend %clearfix;
+}
+
+/* ===========================================================
+   FOOTER
+=========================================================== */
+
+.footer {
+    @extend %clearfix;
+    width: 100%;
+    float: left;
+    position: relative;
+    min-height: 100px;
+}
 
 
 /* ===========================================================
    SPECIFIC PAGES
 =========================================================== */
 
-//@import "03-page-views/front-page";
-//@import '03-page-views/blog';
+//@import "element/front-page";
+@import 'element/blog';
