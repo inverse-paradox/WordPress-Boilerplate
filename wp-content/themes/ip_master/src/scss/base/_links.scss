@@ -1,0 +1,22 @@
+//--------------------------------------------------------------
+// Global Link Styles
+//--------------------------------------------------------------
+a:not(.button):not(.wp-block-button__link) { /* stylelint-disable-line selector-class-pattern */
+	color: $color-primary;
+	opacity: 1;
+	transition: $transition-opacity;
+
+	&:visited {
+		color: #000;
+	} // &:visited
+
+	&:hover,
+	&:active {
+		color: $color-secondary;
+		opacity: 0.6;
+	} // &:hover, &:active
+
+	&:focus {
+		color: $color-secondary;
+	} //  &:focus
+} // a
