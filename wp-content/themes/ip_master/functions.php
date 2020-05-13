@@ -52,6 +52,8 @@ if ( ! function_exists( 'ip_master_setup' ) ) :
 			array(
 				'primary' => esc_html__( 'Primary Menu', 'ip_master' ),
 				'mobile'  => esc_html__( 'Mobile Menu', 'ip_master' ),
+				'courtesy'  => esc_html__( 'Courtesy Menu', 'ip_master' ),
+				'footer'  => esc_html__( 'Footer Menu', 'ip_master' ),
 			)
 		);
 
@@ -183,6 +185,38 @@ function ip_master_widgets_init() {
 
 }
 add_action( 'widgets_init', 'ip_master_widgets_init' );
+
+/**
+ * Custom login page for this theme.
+ */
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/src/images/adminlogo.png);}
+        .login #login_error, .login .message, .login .success{border-left:4px solid #d01528!important;}
+        .wp-core-ui .button, .wp-core-ui .button-secondary{color:#d01528!important;}
+        .wp-core-ui .button:hover, .wp-core-ui .button-secondary:hover{color:#90101d!important;}
+        .wp-core-ui .button-primary{color:#fff!important;background:#d01528!important;border-color:#d01528!important;transition:all 0.5s ease 0s!important;}
+        .wp-core-ui .button-primary:hover{color:#fff!important;background:#90101d!important;border-color:#90101d!important;}
+        .login #backtoblog a:hover, .login #nav a:hover{color:#d01528!important;}
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+/**
+ * Custom login page for this theme.
+ */
+function iframe_dashboard_widget_function() {
+    // Display whatever it is you want to show
+    echo '<iframe src="https://www.inverseparadox.com/widget.html" width="100%" height="300" frameBorder="0">Browser not compatible.</iframe>';
+}
+
+// Create the function use in the action hook
+function example_add_dashboard_widgets() {
+    wp_add_dashboard_widget('iframe_dashboard_widget', 'Inverse Paradox Information', 'iframe_dashboard_widget_function');
+}
+
+// Hook into the 'wp_dashboard_setup' action to register our other functions
+add_action('wp_dashboard_setup', 'example_add_dashboard_widgets' );
 
 /**
  * Custom template tags for this theme.

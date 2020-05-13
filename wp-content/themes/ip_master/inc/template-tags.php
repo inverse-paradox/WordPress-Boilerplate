@@ -268,6 +268,69 @@ function ip_master_display_copyright_text() {
 	echo ip_master_get_the_content( do_shortcode( $copyright_text ) ); // phpcs: xss ok.
 }
 
+
+/**
+ * Echo the phone text saved in the Customizer.
+ *
+ * @author WDS
+ * @return bool
+ */
+function ip_master_display_phone_text() {
+
+	// Grab our customizer settings.
+	$phone_text = get_theme_mod( 'ip_master_phone_text' );
+
+	// Stop if there's nothing to display.
+	if ( ! $phone_text ) {
+		return false;
+	} ?>
+
+	<a href="tel:<?php echo ip_master_get_the_content( do_shortcode( $phone_text ) ); ?>"><?php echo ip_master_get_the_content( do_shortcode( $phone_text ) ); ?></a>
+<?php }
+
+/**
+ * Echo the email text saved in the Customizer.
+ *
+ * @author WDS
+ * @return bool
+ */
+function ip_master_display_email_text() {
+
+	// Grab our customizer settings.
+	$email_text = get_theme_mod( 'ip_master_email_text' );
+
+	// Stop if there's nothing to display.
+	if ( ! $email_text ) {
+		return false;
+	} ?>
+
+	<a href="mailto:<?php echo ip_master_get_the_content( do_shortcode( $email_text ) ); ?>"><?php echo ip_master_get_the_content( do_shortcode( $email_text ) ); ?></a>
+<?php }
+
+/**
+ * Echo the announcement saved in the Customizer.
+ *
+ * @author WDS
+ * @return bool
+ */
+function ip_master_display_announcement_text() {
+
+	// Grab our customizer settings.
+	$announcement_text = get_theme_mod( 'ip_master_announcement_text' );
+
+	// Stop if there's nothing to display.
+	if ( ! $announcement_text ) {
+		return false;
+	} ?>
+
+	<div class="announcement">
+	    <div class="container">
+	        <?php echo ip_master_get_the_content( do_shortcode( $announcement_text ) ); ?>
+	        <span class="close-announcement">x</span>
+	    </div><!--/container-->
+	</div><!--/announcement-->
+<?php }
+
 /**
  * Get the Twitter social sharing URL for the current page.
  *
@@ -429,9 +492,6 @@ function ip_master_display_header_button() {
 	$button_url  = get_theme_mod( 'ip_master_header_button_url' );
 	$button_text = get_theme_mod( 'ip_master_header_button_text' );
 	?>
-	<div class="form-container" aria-hidden="true">
-				<?php get_search_form(); ?>
-			</div><!-- .form-container -->
 			
 	<div class="site-header-action">
 		<?php
@@ -443,6 +503,9 @@ function ip_master_display_header_button() {
 			<button type="button" class="cta-button" aria-expanded="false" aria-label="<?php esc_html_e( 'Search', 'ip_master' ); ?>">
 				<i class="fa-li fa fa-search"></i>
 			</button>
+			<div class="form-container" aria-hidden="true">
+				<?php get_search_form(); ?>
+			</div><!-- .form-container -->
 		<?php endif; ?>
 	</div><!-- .header-trigger -->
 	<?php

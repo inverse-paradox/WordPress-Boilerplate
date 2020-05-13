@@ -12,7 +12,7 @@
 	}
 
 	const headerSearchToggle = document.querySelector( '.site-header-action .cta-button' ),
-		headerSearchForm = document.querySelector( '.form-container' );
+		headerSearchForm = document.querySelector( '.site-header-action .form-container' );
 
 	if ( ! headerSearchToggle || ! headerSearchForm ) {
 		return;
@@ -81,5 +81,6 @@
 			document.body.classList.remove( 'search-form-visible' );
 			toggleAriaLabels();
 		}
+
 	}
 }() );

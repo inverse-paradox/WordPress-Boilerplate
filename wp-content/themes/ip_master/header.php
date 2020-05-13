@@ -26,6 +26,22 @@
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'ip_master' ); ?></a>
 
 	<header class="site-header background-gallery">
+        <?php ip_master_display_announcement_text(); ?>
+
+		<nav id="site-navigation" class="main-navigation courtesy" aria-label="<?php esc_attr_e( 'Footer Navigation', 'ip_master' ); ?>">
+			<?php
+			wp_nav_menu(
+				array(
+					'fallback_cb'    => false,
+					'theme_location' => 'courtesy',
+					'menu_id'        => 'courtesy-menu',
+					'menu_class'     => 'menu dropdown container',
+					'container'      => false,
+				)
+			);
+			?>
+		</nav><!-- #site-navigation-->
+		
 		<div class="display-flex container">
 
 			<div class="site-branding">

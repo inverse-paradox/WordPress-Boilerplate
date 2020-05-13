@@ -31,6 +31,7 @@
 	a {
 		color: $color-mobile-menu-link;
 		font-size: rem(14);
+		text-decoration: none;
 
 		&:focus {
 			outline: 2px solid $color-mobile-menu-link;
@@ -81,6 +82,7 @@
 		a {
 			display: inline-block;
 			max-width: calc(100% - 40px);
+			text-decoration: none;
 		} // a
 
 		&.is-visible {
@@ -306,6 +308,7 @@
 .admin-bar{
 	.off-canvas-open{
 		top:5.5rem;
+		left:20px;
 	}
 }
 

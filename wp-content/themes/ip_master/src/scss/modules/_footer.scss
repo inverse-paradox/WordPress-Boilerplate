@@ -9,6 +9,32 @@
 	width: 100%;
 
 	.site-info {
+
+		@include media($desktop) {
+			flex: 0 0 100%;
+			display: flex;
+		}
+
+		.col{
+			width: 100%;
+			padding:10px 0px;
+
+			@include media($desktop) {
+				width:50%;
+				flex: 0 0 auto;
+				padding:0px;
+			}
+
+			.social-icons{
+				@include media($desktop) {
+					float:right;
+				}
+			}
+		}
+	} 
+
+	.bottom{
 		text-align: center;
-	} // .site-info
+		clear:both;
+	}
 }

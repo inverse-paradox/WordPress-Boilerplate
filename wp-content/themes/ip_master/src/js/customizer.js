@@ -45,3 +45,20 @@ function wdsCustomizer() {
 		}
 	}
 }
+
+jQuery(function($){
+    
+    //--------------------
+    //  HOME PAGE ANNOUNCEMENT
+    //-------------------- 
+
+    $('.close-announcement').on("click", function() {
+        $('.announcement').hide()
+        Cookies.set('closed_announcement', 'true', { expires: 1 });
+    });
+
+    if(Cookies.get('closed_announcement')) {
+        $('.announcement').hide();
+    }
+
+});

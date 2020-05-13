@@ -6,6 +6,28 @@
 	width: 100%;
 	padding: 0px 0px 20px 0px;
 
+	.announcement{
+		background-color:$color-primary;
+		color:#fff;
+		padding:10px 0px;
+		text-align:left;
+		font-weight: bold;
+		margin-bottom: 20px;
+		.close-announcement{
+			float:right;
+			transition:all 0.5s ease 0s;
+			&:hover{
+				color:#eee;
+			}
+		}
+	}
+
+	button.off-canvas-open{
+		top:0px;
+		left:20px;
+		position:relative;
+	}
+
 	// Site logo.
 	.site-branding {
 		flex: 0 0 auto;
@@ -14,7 +36,7 @@
 
 		@include media($tablet-portrait) {
 			margin-right: auto;
-			width: 90%;
+			width: 100%;
 		}
 
 		@include media($tablet-landscape) {
@@ -23,9 +45,17 @@
 
 		// Don't let the logo get out of control.
 		img {
+			display: block;
+			margin:0 auto;
+
+			@include media($desktop) {
+				margin:0;
+			}
 
 			@include media($tablet-portrait, $tablet-landscape) {
 				width: 50%;
+				display: block;
+				margin:0 auto;
 			}
 		} // img
 	} // .site-branding
@@ -64,8 +94,8 @@
 	//-----------------------------------------
 	.site-header-action {
 		flex: 0 0 auto;
-		text-align: left;
-		width: 100%;
+		text-align: right;
+		width: 50%;
 
 		@include media($tablet-landscape) {
 			margin-left: auto;
@@ -124,27 +154,12 @@
 	} // .site-header-action
 
 	.form-container{
-		position:fixed;
-		top:0;
-		right:0;
-		bottom:0;
-		left:0;
-		background-color:rgba(0,0,0,0.8);
-		display: none;
-		z-index: 9999;
 
 		.search-form-visible & {
 			display: block;
 		}
 
 		.search-form{
-			width:60%;
-			position:absolute;
-			top:50vh;
-			display: block;
-			margin:0 auto;
-			left:0;
-			right:0;
 
 			.button, button, input[type=button], input[type=reset], input[type=submit]{
 				background-color:$color-primary;

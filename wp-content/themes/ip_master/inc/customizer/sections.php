@@ -34,6 +34,16 @@ function ip_master_customize_sections( $wp_customize ) {
 		)
 	);
 
+	// Register a social links section.
+	$wp_customize->add_section(
+		'ip_master_general_section',
+		array(
+			'title'       => esc_html__( 'General', 'ip_master' ),
+			'priority'    => 90,
+			'panel'       => 'site-options',
+		)
+	);
+
 	// Register a header section.
 	$wp_customize->add_section(
 		'ip_master_header_section',

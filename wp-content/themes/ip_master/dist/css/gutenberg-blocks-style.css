@@ -1779,9 +1779,29 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       padding-bottom: 1.5rem;
       flex: 0 0 100%;
       width: 100%; }
-      .edit-post-visual-editor .acf-block-preview .site-footer .site-info,
-      .block-editor-inserter__preview .acf-block-preview .site-footer .site-info {
-        text-align: center; }
+      @media screen and (min-width: 1200px) {
+        .edit-post-visual-editor .acf-block-preview .site-footer .site-info,
+        .block-editor-inserter__preview .acf-block-preview .site-footer .site-info {
+          flex: 0 0 100%;
+          display: flex; } }
+      .edit-post-visual-editor .acf-block-preview .site-footer .site-info .col,
+      .block-editor-inserter__preview .acf-block-preview .site-footer .site-info .col {
+        width: 100%;
+        padding: 10px 0px; }
+        @media screen and (min-width: 1200px) {
+          .edit-post-visual-editor .acf-block-preview .site-footer .site-info .col,
+          .block-editor-inserter__preview .acf-block-preview .site-footer .site-info .col {
+            width: 50%;
+            flex: 0 0 auto;
+            padding: 0px; } }
+        @media screen and (min-width: 1200px) {
+          .edit-post-visual-editor .acf-block-preview .site-footer .site-info .col .social-icons,
+          .block-editor-inserter__preview .acf-block-preview .site-footer .site-info .col .social-icons {
+            float: right; } }
+      .edit-post-visual-editor .acf-block-preview .site-footer .bottom,
+      .block-editor-inserter__preview .acf-block-preview .site-footer .bottom {
+        text-align: center;
+        clear: both; }
     .edit-post-visual-editor .acf-block-preview button,
     .edit-post-visual-editor .acf-block-preview input,
     .edit-post-visual-editor .acf-block-preview select,
@@ -2102,6 +2122,26 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       flex: 0 0 100%;
       width: 100%;
       padding: 0px 0px 20px 0px; }
+      .edit-post-visual-editor .acf-block-preview .site-header .announcement,
+      .block-editor-inserter__preview .acf-block-preview .site-header .announcement {
+        background-color: #d31020;
+        color: #fff;
+        padding: 10px 0px;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 20px; }
+        .edit-post-visual-editor .acf-block-preview .site-header .announcement .close-announcement,
+        .block-editor-inserter__preview .acf-block-preview .site-header .announcement .close-announcement {
+          float: right;
+          transition: all 0.5s ease 0s; }
+          .edit-post-visual-editor .acf-block-preview .site-header .announcement .close-announcement:hover,
+          .block-editor-inserter__preview .acf-block-preview .site-header .announcement .close-announcement:hover {
+            color: #eee; }
+      .edit-post-visual-editor .acf-block-preview .site-header button.off-canvas-open,
+      .block-editor-inserter__preview .acf-block-preview .site-header button.off-canvas-open {
+        top: 0px;
+        left: 20px;
+        position: relative; }
       .edit-post-visual-editor .acf-block-preview .site-header .site-branding,
       .block-editor-inserter__preview .acf-block-preview .site-header .site-branding {
         flex: 0 0 auto;
@@ -2111,15 +2151,25 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
           .edit-post-visual-editor .acf-block-preview .site-header .site-branding,
           .block-editor-inserter__preview .acf-block-preview .site-header .site-branding {
             margin-right: auto;
-            width: 90%; } }
+            width: 100%; } }
         @media screen and (min-width: 900px) {
           .edit-post-visual-editor .acf-block-preview .site-header .site-branding,
           .block-editor-inserter__preview .acf-block-preview .site-header .site-branding {
             width: 45%; } }
-        @media screen and (min-width: 600px) and (max-width: 899px) {
-          .edit-post-visual-editor .acf-block-preview .site-header .site-branding img,
-          .block-editor-inserter__preview .acf-block-preview .site-header .site-branding img {
-            width: 50%; } }
+        .edit-post-visual-editor .acf-block-preview .site-header .site-branding img,
+        .block-editor-inserter__preview .acf-block-preview .site-header .site-branding img {
+          display: block;
+          margin: 0 auto; }
+          @media screen and (min-width: 1200px) {
+            .edit-post-visual-editor .acf-block-preview .site-header .site-branding img,
+            .block-editor-inserter__preview .acf-block-preview .site-header .site-branding img {
+              margin: 0; } }
+          @media screen and (min-width: 600px) and (max-width: 899px) {
+            .edit-post-visual-editor .acf-block-preview .site-header .site-branding img,
+            .block-editor-inserter__preview .acf-block-preview .site-header .site-branding img {
+              width: 50%;
+              display: block;
+              margin: 0 auto; } }
       .edit-post-visual-editor .acf-block-preview .site-header .site-title,
       .block-editor-inserter__preview .acf-block-preview .site-header .site-title {
         font-size: 3rem; }
@@ -2139,8 +2189,8 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       .edit-post-visual-editor .acf-block-preview .site-header .site-header-action,
       .block-editor-inserter__preview .acf-block-preview .site-header .site-header-action {
         flex: 0 0 auto;
-        text-align: left;
-        width: 100%; }
+        text-align: right;
+        width: 50%; }
         @media screen and (min-width: 900px) {
           .edit-post-visual-editor .acf-block-preview .site-header .site-header-action,
           .block-editor-inserter__preview .acf-block-preview .site-header .site-header-action {
@@ -2189,44 +2239,25 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
             .search-form-visible .edit-post-visual-editor .acf-block-preview .site-header .site-header-action .form-container .search-form, .search-form-visible
             .block-editor-inserter__preview .acf-block-preview .site-header .site-header-action .form-container .search-form {
               display: block; }
-      .edit-post-visual-editor .acf-block-preview .site-header .form-container,
+      .search-form-visible .edit-post-visual-editor .acf-block-preview .site-header .form-container, .search-form-visible
       .block-editor-inserter__preview .acf-block-preview .site-header .form-container {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: none;
-        z-index: 9999; }
-        .search-form-visible .edit-post-visual-editor .acf-block-preview .site-header .form-container, .search-form-visible
-        .block-editor-inserter__preview .acf-block-preview .site-header .form-container {
-          display: block; }
-        .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form,
-        .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form {
-          width: 60%;
-          position: absolute;
-          top: 50vh;
-          display: block;
-          margin: 0 auto;
-          left: 0;
-          right: 0; }
-          .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form .button, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form button, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=button], .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=reset], .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=submit],
-          .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form .button,
-          .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form button,
-          .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=button],
-          .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=reset],
-          .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=submit] {
-            background-color: #d31020;
-            transition: all 0.5s ease 0s; }
-            .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form .button:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form button:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=button]:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=reset]:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=submit]:hover,
-            .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form .button:hover,
-            .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form button:hover,
-            .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=button]:hover,
-            .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=reset]:hover,
-            .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=submit]:hover {
-              background-color: #6e6c6c;
-              color: #fff; }
+        display: block; }
+      .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form .button, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form button, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=button], .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=reset], .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=submit],
+      .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form .button,
+      .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form button,
+      .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=button],
+      .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=reset],
+      .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=submit] {
+        background-color: #d31020;
+        transition: all 0.5s ease 0s; }
+        .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form .button:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form button:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=button]:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=reset]:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=submit]:hover,
+        .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form .button:hover,
+        .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form button:hover,
+        .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=button]:hover,
+        .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=reset]:hover,
+        .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form input[type=submit]:hover {
+          background-color: #6e6c6c;
+          color: #fff; }
       .edit-post-visual-editor .acf-block-preview .site-header .main-navigation,
       .block-editor-inserter__preview .acf-block-preview .site-header .main-navigation {
         flex: 0 0 auto;
@@ -2601,6 +2632,9 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
         .edit-post-visual-editor .acf-block-preview table,
         .block-editor-inserter__preview .acf-block-preview table {
           border: 1px solid #ccc; } }
+    .edit-post-visual-editor .acf-block-preview .login h1 a,
+    .block-editor-inserter__preview .acf-block-preview .login h1 a {
+      background-image: url(../src/images/adminlogo.png); }
     .edit-post-visual-editor .acf-block-preview .accordion-block,
     .block-editor-inserter__preview .acf-block-preview .accordion-block {
       position: relative; }
@@ -3012,7 +3046,8 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       .edit-post-visual-editor .acf-block-preview .mobile-menu a,
       .block-editor-inserter__preview .acf-block-preview .mobile-menu a {
         color: #d31020;
-        font-size: 0.875rem; }
+        font-size: 0.875rem;
+        text-decoration: none; }
         .edit-post-visual-editor .acf-block-preview .mobile-menu a:focus,
         .block-editor-inserter__preview .acf-block-preview .mobile-menu a:focus {
           outline: 2px solid #d31020; }
@@ -3044,7 +3079,8 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       .edit-post-visual-editor .acf-block-preview .mobile-menu .menu-item-has-children a,
       .block-editor-inserter__preview .acf-block-preview .mobile-menu .menu-item-has-children a {
         display: inline-block;
-        max-width: calc(100% - 40px); }
+        max-width: calc(100% - 40px);
+        text-decoration: none; }
       .edit-post-visual-editor .acf-block-preview .mobile-menu .menu-item-has-children.is-visible,
       .block-editor-inserter__preview .acf-block-preview .mobile-menu .menu-item-has-children.is-visible {
         max-height: 31.25rem; }
@@ -3209,7 +3245,8 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
         display: block; }
     .edit-post-visual-editor .acf-block-preview .admin-bar .off-canvas-open,
     .block-editor-inserter__preview .acf-block-preview .admin-bar .off-canvas-open {
-      top: 5.5rem; }
+      top: 5.5rem;
+      left: 20px; }
     .edit-post-visual-editor .acf-block-preview .off-canvas-container.is-visible,
     .block-editor-inserter__preview .acf-block-preview .off-canvas-container.is-visible {
       width: 100%; }

@@ -92,6 +92,95 @@ function ip_master_customize_social_icons( $wp_customize ) {
 add_action( 'customize_register', 'ip_master_customize_social_icons' );
 
 /**
+ * Register a phone general setting.
+ *
+ * @author WDS
+ * @param object $wp_customize Instance of WP_Customize_Class.
+ */
+function ip_master_customize_general_phone( $wp_customize ) {
+	// Register a setting.
+	$wp_customize->add_setting(
+		'ip_master_phone_text',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	// Create the setting field.
+		$wp_customize->add_control(
+			'ip_master_phone_text',
+			array(
+				'label'       => esc_html__( 'Phone Number', 'ip_master' ),
+				'section' => 'ip_master_general_section',
+				'type'    => 'text',
+			)
+		);
+}
+add_action( 'customize_register', 'ip_master_customize_general_phone' );
+
+/**
+ * Register a email general setting.
+ *
+ * @author WDS
+ * @param object $wp_customize Instance of WP_Customize_Class.
+ */
+function ip_master_customize_general_email( $wp_customize ) {
+	// Register a setting.
+	$wp_customize->add_setting(
+		'ip_master_email_text',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	// Create the setting field.
+		$wp_customize->add_control(
+			'ip_master_email_text',
+			array(
+				'label'       => esc_html__( 'Email', 'ip_master' ),
+				'section' => 'ip_master_general_section',
+				'type'    => 'text',
+			)
+		);
+}
+add_action( 'customize_register', 'ip_master_customize_general_email' );
+
+/**
+ * Register a checkbox footer setting.
+ *
+ * @author WDS
+ * @param object $wp_customize Instance of WP_Customize_Class.
+ */
+function ip_master_customize_footer_checkbox( $wp_customize ) {
+	// Register a setting.
+	$wp_customize->add_setting(
+		'ip_master_footer_checkbox',
+		array(
+  			'capability' => 'edit_theme_options',
+  			'sanitize_callback' => 'themeslug_sanitize_checkbox',
+		) 
+	);
+
+	$wp_customize->add_control(
+		'ip_master_footer_checkbox',
+		array(
+  			'type' => 'checkbox',
+  			'section' => 'ip_master_footer_section',
+  			'label' => __( 'Hide the Inverse Paradox Footer Copyright' ),
+		)
+	);
+
+	function themeslug_sanitize_checkbox( $checked ) {
+  		// Boolean check.
+  		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	}
+
+}
+add_action( 'customize_register', 'ip_master_customize_footer_checkbox' );
+
+/**
  * Register copyright text setting.
  *
  * @author WDS
@@ -110,19 +199,46 @@ function ip_master_customize_copyright_text( $wp_customize ) {
 
 	// Create the setting field.
 	$wp_customize->add_control(
-		new Text_Editor_Custom_Control(
-			$wp_customize,
-			'ip_master_copyright_text',
-			array(
-				'label'       => esc_html__( 'Copyright Text', 'ip_master' ),
-				'description' => esc_html__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', 'ip_master' ),
-				'section'     => 'ip_master_footer_section',
-				'type'        => 'textarea',
-			)
+		'ip_master_copyright_text',
+		array(
+			'label'       => esc_html__( 'Copyright Text', 'ip_master' ),
+			'description' => esc_html__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', 'ip_master' ),
+			'section' => 'ip_master_footer_section',
+			'type'    => 'textarea',
 		)
 	);
 }
 add_action( 'customize_register', 'ip_master_customize_copyright_text' );
+
+/**
+ * Register copyright text setting.
+ *
+ * @author WDS
+ * @param object $wp_customize Instance of WP_Customize_Class.
+ */
+function ip_master_customize_announcement_text( $wp_customize ) {
+
+	// Register a setting.
+	$wp_customize->add_setting(
+		'ip_master_announcement_text',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	// Create the setting field.
+	$wp_customize->add_control(
+		'ip_master_announcement_text',
+		array(
+			'label'       => esc_html__( 'Announcement Text', 'ip_master' ),
+			'description' => esc_html__( 'The announcement text will be displayed in the header. Basic HTML tags allowed.', 'ip_master' ),
+			'section' => 'ip_master_header_section',
+			'type'    => 'textarea',
+		)
+	);
+}
+add_action( 'customize_register', 'ip_master_customize_announcement_text' );
 
 /**
  * Register header button setting.
