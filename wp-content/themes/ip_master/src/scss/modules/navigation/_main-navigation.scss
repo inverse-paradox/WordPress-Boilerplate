@@ -107,3 +107,15 @@
 		position: relative;
 	} // li
 } // &.dropdown
+
+.bottom{
+	.main-navigation{
+		width:75%;
+		ul{
+			padding-top:10px;
+			ul{
+				padding-top:0px;
+			}
+		}
+	}
+}

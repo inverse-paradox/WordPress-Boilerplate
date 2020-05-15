@@ -46,12 +46,10 @@ function wdsCustomizer() {
 	}
 }
 
+//--------------------
+//  HOME PAGE ANNOUNCEMENT
+//-------------------- 
 jQuery(function($){
-    
-    //--------------------
-    //  HOME PAGE ANNOUNCEMENT
-    //-------------------- 
-
     $('.close-announcement').on("click", function() {
         $('.announcement').hide()
         Cookies.set('closed_announcement', 'true', { expires: 1 });
@@ -60,5 +58,27 @@ jQuery(function($){
     if(Cookies.get('closed_announcement')) {
         $('.announcement').hide();
     }
+});
 
+//--------------------
+//  SEARCH
+//-------------------- 
+jQuery(document).ready(function($) {
+	window.addEventListener("load", function() {
+		var search = document.querySelector(".search-toggle_desktop");
+		var searchMobile = document.querySelector(".search-toggle_mobile");
+
+		search.onclick = function() {
+			document.querySelector(".desktop-search").classList.toggle("visible");
+			document.querySelector(".main-bar").classList.toggle("visible");
+		};
+
+		searchMobile.onclick = function() {
+			document.querySelector(".menu-mobile-search").classList.toggle("visible");
+			document.querySelector(".main-bar").classList.toggle("visible");
+			iconClose.classList.toggle("visibility");
+		};
+
+		document.addEventListener("touchstart", function() {}, true);
+	});
 });

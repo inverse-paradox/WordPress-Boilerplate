@@ -14,5 +14,5 @@ $random_identifier = wp_rand();
 		<span class="screen-reader-text"><?php esc_html_e( 'To search this site, enter a search term', 'ip_master' ); ?></span>
 		<input class="search-field" id="search-field-<?php echo esc_attr( $random_identifier ); ?>" type="text" name="s" value="<?php echo get_search_query(); ?>" aria-required="false" autocomplete="off" placeholder="<?php echo esc_attr_e( 'Search', 'ip_master' ); ?>" />
 	</label>
-	<input type="submit" id="search-submit" class="button button-search" tabindex="-1" value="<?php esc_attr_e( 'Submit', 'ip_master' ); ?>" />
+	<input type="submit" id="search-submit" class="button button-search" value="<?php esc_attr_e( 'Submit', 'ip_master' ); ?>" />
 </form>

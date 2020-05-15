@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main">
+	<main id="main" class="site-main blog">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -20,28 +20,32 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			<div class="sidebar">
+				Sidebar
+			</div>
 
-				/*
-					* Include the Post-Format-specific template for the content.
-					* If you want to override this in a child theme, then include a file
-					* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					*/
-				get_template_part( 'template-parts/content', get_post_format() );
+			<div class="blog-content">
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) :
+					the_post();
 
-			endwhile;
+					/*
+						* Include the Post-Format-specific template for the content.
+						* If you want to override this in a child theme, then include a file
+						* called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						*/
+					get_template_part( 'template-parts/content', get_post_format() );
 
-			ip_master_display_numeric_pagination();
+				endwhile;
 
-		else :
+				ip_master_display_numeric_pagination();
 
-			get_template_part( 'template-parts/content', 'none' );
+				else :
+				get_template_part( 'template-parts/content', 'none' ); ?>
+			</div>
 
-		endif;
-		?>
+		<?php endif; ?>
 
 	</main><!-- #main -->
 <?php get_footer(); ?>

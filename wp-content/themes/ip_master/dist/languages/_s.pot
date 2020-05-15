@@ -49,7 +49,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../../footer.php:16, ../../header.php:31
+#: ../../footer.php:16, ../../header.php:32
 msgid "Footer Navigation"
 msgstr ""
 
@@ -94,11 +94,11 @@ msgstr ""
 msgid "Widget area for %s"
 msgstr ""
 
-#: ../../header.php:26
+#: ../../header.php:27
 msgid "Skip to content"
 msgstr ""
 
-#: ../../header.php:68
+#: ../../header.php:69
 msgid "Open Menu"
 msgstr ""
 

@@ -35,6 +35,26 @@ function ip_master_customize_additional_scripts( $wp_customize ) {
 
 	// Register a setting.
 	$wp_customize->add_setting(
+		'ip_master_body_scripts',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'force_balance_tags',
+		)
+	);
+
+	// Create the setting field.
+	$wp_customize->add_control(
+		'ip_master_body_scripts',
+		array(
+			'label'       => esc_html__( 'Body Scripts', 'ip_master' ),
+			'description' => esc_html__( 'Additional scripts to add to after the <body>. Basic HTML tags are allowed.', 'ip_master' ),
+			'section'     => 'ip_master_additional_scripts_section',
+			'type'        => 'textarea',
+		)
+	);
+
+	// Register a setting.
+	$wp_customize->add_setting(
 		'ip_master_footer_scripts',
 		array(
 			'default'           => '',

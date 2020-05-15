@@ -29,8 +29,8 @@ if ( ! function_exists( 'ip_master_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: the date the post was published */
-			esc_html_x( 'Posted on %s', 'post date', 'ip_master' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			esc_html_x( '%s', 'post date', 'ip_master' ),
+			'<p>' . $time_string . '</p>'
 		);
 
 		$byline = sprintf(
@@ -268,6 +268,25 @@ function ip_master_display_copyright_text() {
 	echo ip_master_get_the_content( do_shortcode( $copyright_text ) ); // phpcs: xss ok.
 }
 
+/**
+ * Echo the body scripts saved in the Customizer.
+ *
+ * @author WDS
+ * @return bool
+ */
+function ip_master_display_body_scripts() {
+
+	// Grab our customizer settings.
+	$body_scripts = get_theme_mod( 'ip_master_body_scripts' );
+
+	// Stop if there's nothing to display.
+	if ( ! $body_scripts ) {
+		return false;
+	}
+
+	echo ip_master_get_the_content( do_shortcode( $body_scripts ) ); // phpcs: xss ok.
+}
+
 
 /**
  * Echo the phone text saved in the Customizer.
@@ -500,12 +519,11 @@ function ip_master_display_header_button() {
 		?>
 			<a href="<?php echo esc_url( $button_url ); ?>" class="button button-link"><?php echo esc_html( $button_text ?: __( 'More Information', 'ip_master' ) ); ?></a>
 		<?php else : ?>
-			<button type="button" class="cta-button" aria-expanded="false" aria-label="<?php esc_html_e( 'Search', 'ip_master' ); ?>">
-				<i class="fa-li fa fa-search"></i>
-			</button>
-			<div class="form-container" aria-hidden="true">
-				<?php get_search_form(); ?>
-			</div><!-- .form-container -->
+			<div class="search-toggle search-toggle_desktop">
+                <button class="search nav-search-button cta-button" aria-expanded="false" aria-label="Goto search form">
+                	<i class="fa-li fa fa-search"></i>
+                </button>
+            </div>
 		<?php endif; ?>
 	</div><!-- .header-trigger -->
 	<?php

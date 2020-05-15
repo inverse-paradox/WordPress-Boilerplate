@@ -175,7 +175,7 @@ input[type="checkbox"]:checked::after {
 	// Input.
 	.search-field {
 		min-width: 0;
-		width: calc(100% - #{rem(98)});
+		width: calc(100% - .625rem);
 	} // .search-field
 
 	.search-submit {

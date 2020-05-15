@@ -24,7 +24,7 @@
 
 	button.off-canvas-open{
 		top:0px;
-		left:20px;
+		left:0px;
 		position:relative;
 	}
 
@@ -92,16 +92,17 @@
 	//-----------------------------------------
 	// Header action container — Form Dropdown.
 	//-----------------------------------------
+
+	.bottom{
+		button.mobile-menu{
+			width:50%
+		}
+	}
+
 	.site-header-action {
 		flex: 0 0 auto;
 		text-align: right;
 		width: 50%;
-
-		@include media($tablet-landscape) {
-			margin-left: auto;
-			text-align: right;
-			width: 35%;
-		}
 
 		@include media($desktop) {
 			width: 25%;
@@ -153,18 +154,40 @@
 		} // .form-container
 	} // .site-header-action
 
-	.form-container{
+	.form-container, .desktop-search{
+		flex-basis: 100%;
+  		max-width: 100%;
+  		opacity: 0;
+  		visibility: hidden;
+  		transform: scale(0);
+  		transition: all 0.5s ease;
+  		position: absolute;
+  		left: -9999px;
+  		margin: 2.35294rem auto 1.64706rem;
+  		transition: margin-top 0.1s ease, opacity 0.4s ease, transform 0.4s ease;
+  		transition: transform 0.5s ease, opacity 0.5s ease;
 
-		.search-form-visible & {
-			display: block;
-		}
+		&.visible {
+    		visibility: visible;
+    		transform: scale(1);
+    		opacity: 1;
+    		position: relative;
+    		left: 0;
+    		transition: transform 0.5s ease, opacity 0.5s ease;
+  		}
 
 		.search-form{
+			display: flex;
+    		justify-content: center;
+
+    		label{
+    			width:60%;
+    		}
 
 			.button, button, input[type=button], input[type=reset], input[type=submit]{
 				background-color:$color-primary;
 				transition:all 0.5s ease 0s;
-				&:hover{
+				&:hover, &:focus{
 					background-color:$color-secondary;
 					color:#fff;
 				}
@@ -178,5 +201,8 @@
 	.main-navigation {
 		flex: 0 0 auto;
 		width: 100%;
+		&.courtesy{
+			padding:10px 0px;
+		}
 	} // .main-navigation
 } // .site-header

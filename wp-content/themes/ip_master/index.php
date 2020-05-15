@@ -14,7 +14,8 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main">
+	<main id="main" class="site-main blog">
+		<div class="display-flex container">
 
 		<?php
 		if ( have_posts() ) :
@@ -26,8 +27,21 @@ get_header(); ?>
 				</header>
 
 			<?php
-			endif;
+			endif; ?>
 
+			<div class="sidebar">
+				<h2>Categories</h2>
+				<ul>
+				    <?php wp_list_categories( array(
+				        'orderby' => 'name',
+				        'title_li' => ''
+				    ) ); ?> 
+				</ul>
+			</div>
+
+ 			<div class="blog-content">
+
+			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -43,12 +57,12 @@ get_header(); ?>
 
 			ip_master_display_numeric_pagination();
 
-		else :
+			else :
+			get_template_part( 'template-parts/content', 'none' ); ?>
+		</div><!--left-->
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+		<?php endif;?>
+		</div>
 
 	</main><!-- #main -->
 
