@@ -23,9 +23,7 @@
 	} // .comment-reply-title
 
 	.comments-title {
-
-		@include margin(rem(126) null null null);
-
+		margin-top:30px;
 		font-size: $space;
 	} // .comments-title
 

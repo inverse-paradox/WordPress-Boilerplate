@@ -28,35 +28,72 @@
 					if ( 'post' === get_post_type() ) :
 					?>
 					<div class="entry-meta">
-						<?php ip_master_posted_on(); ?>
+						<div class="display-flex container">
+							<div class="left">
+								<?php ip_master_posted_on(); ?>
+							</div><!--left-->
+							<?php if ( is_single() ) : ?>
+								<div class="right">
+									<span class="reading-time">
+										<p>Reading Time: <?php echo reading_time(); ?></p>
+									</span>
+								</div><!--right-->
+							<?php endif; ?>
+						</div><!--display-flex-->
 					</div><!-- .entry-meta -->
 					<?php endif; ?>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
-					<?php
-						the_excerpt(
-							sprintf(
-								wp_kses(
-									/* translators: %s: Name of current post. */
-									__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ip_master' ),
-									array(
-										'span' => array(
-											'class' => array(),
-										),
-									)
-								),
-								the_title( '<span class="screen-reader-text">"', '"</span>', false )
-							)
-						);
+					<?php if ( is_single() ) : ?>
+						<?php
+							the_content(
+								sprintf(
+									wp_kses(
+										/* translators: %s: Name of current post. */
+										__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ip_master' ),
+										array(
+											'span' => array(
+												'class' => array(),
+											),
+										)
+									),
+									the_title( '<span class="screen-reader-text">"', '"</span>', false )
+								)
+							);
 
-						wp_link_pages(
-							array(
-								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ip_master' ),
-								'after'  => '</div>',
-							)
-						);
-					?>
+							wp_link_pages(
+								array(
+									'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ip_master' ),
+									'after'  => '</div>',
+								)
+							);
+						?>
+					<?php else : ?>
+						<?php
+							the_excerpt(
+								sprintf(
+									wp_kses(
+										/* translators: %s: Name of current post. */
+										__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ip_master' ),
+										array(
+											'span' => array(
+												'class' => array(),
+											),
+										)
+									),
+									the_title( '<span class="screen-reader-text">"', '"</span>', false )
+								)
+							);
+
+							wp_link_pages(
+								array(
+									'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ip_master' ),
+									'after'  => '</div>',
+								)
+							);
+						?>
+					<?php endif; ?>
 				</div><!-- .entry-content -->
 			</div><!-- content -->
 		</div><!-- display-flex container -->

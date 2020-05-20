@@ -2,12 +2,20 @@
 // Blog
 //--------------------------------------------------------------
 main.blog{
+	header.page-header{
+		margin:0px auto;
+	}
 	.sidebar{
-		padding:1% 2%;
-		background-color:#eee;
 		order:2;
 		margin-left:2%;
 		width:25%;
+
+		.block{
+			background-color:#eee;
+			margin-bottom: 20px;
+			padding:10px 20px;
+		}
+
 		h1,h2,h3,h4,p,li{
 			color:$color-primary;
 		}
@@ -15,6 +23,7 @@ main.blog{
 			margin-bottom: 10px;
 		}
 		ul{
+			padding-bottom:10px;
 			li{
 				a{
 					color:#fff;
@@ -70,6 +79,9 @@ main.blog{
 			}
 			.entry-meta{
 				font-style: italic;
+				.posted-on{
+					display: inline-block;
+				}
 			}
 			.entry-content{
 				margin-top:10px;
@@ -80,6 +92,43 @@ main.blog{
 						color:$color-secondary;
 					}
 				}
+			}
+		}
+	}
+}
+
+main.single{
+	article{
+		.post-content{
+			.entry-header{
+				margin-top:20px;
+				.entry-title{
+					margin-bottom: 0px;
+				}
+				.entry-meta{
+					border-bottom:1px solid #ccc;
+					margin-bottom:25px;
+					padding-bottom:30px;
+					.left{
+						order:1;
+						width:50%;
+						.posted-on{
+							display: inline-block;
+						}
+					}
+					.right{
+						order:1;
+						width:50%;
+					}
+				}
+			}
+		}
+	}
+	.post__social{
+		padding:10px 0px;
+		.social-share{
+			a{
+				margin-left:5px;
 			}
 		}
 	}

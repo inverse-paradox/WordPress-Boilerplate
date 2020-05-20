@@ -210,6 +210,49 @@ function iframe_dashboard_widget_function() {
     echo '<iframe src="https://www.inverseparadox.com/widget.html" width="100%" height="300" frameBorder="0">Browser not compatible.</iframe>';
 }
 
+/* ===============================================================
+    Social Sharing Buttons
+=============================================================== */
+function ip_social_sharing_buttons() {
+	global $post;
+	if ( is_singular() || is_home() ) {
+		// Get current page URL
+		$articleURL = urlencode( get_permalink() );
+		// Get current page title
+		$articleTitle = str_replace( ' ', '%20', get_the_title() );
+		// Construct sharing URL without using any script
+		$twitterURL  = 'https://twitter.com/intent/tweet?text=' . $articleTitle . '&amp;url=' . $articleURL . '&amp;via=Crunchify';
+		$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u=' . $articleURL;
+		$linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $articleURL . '&amp;title=' . $articleTitle;
+		// Add sharing button at the end of page/page content
+		$content = '<div class="social-share">';
+		$content .= '<span>' . __( 'Share This Article:', 'ariesel' ) . '</span>';
+		$content .= '<a class="social-share__link facebook" href="' . $facebookURL . '" target="_blank"><i class="fab fa-facebook-square"></i></a>';
+		$content .= '<a class="social-share__link twitter" href="' . $twitterURL . '" target="_blank"><i class="fab fa-twitter"></i></a>';
+		$content .= '<a class="social-share__link print-page" href="javascript:void(0);" onClick="print();" ><i class="fas fa-print"></i></a>';
+		$content .= '</div>';
+		echo $content;
+	}
+}
+
+
+/* ===============================================================
+    Estimated Reading Time
+=============================================================== */
+function reading_time() {
+	$content = get_post_field( 'post_content', $post->ID );
+	$word_count = str_word_count( strip_tags( $content ) );
+	$readingtime = ceil($word_count / 200);
+if ($readingtime == 1) {
+	$timer = " minute";
+} else {
+	$timer = " minutes";
+}
+	$totalreadingtime = $readingtime . $timer;
+	return $totalreadingtime;
+}
+
+
 // Create the function use in the action hook
 function example_add_dashboard_widgets() {
     wp_add_dashboard_widget('iframe_dashboard_widget', 'Inverse Paradox Information', 'iframe_dashboard_widget_function');

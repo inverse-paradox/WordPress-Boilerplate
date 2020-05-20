@@ -1541,7 +1541,7 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
         margin-top: 2.9375rem; }
       .edit-post-visual-editor .acf-block-preview .comments-area .comments-title,
       .block-editor-inserter__preview .acf-block-preview .comments-area .comments-title {
-        margin-top: 7.875rem;
+        margin-top: 30px;
         font-size: 1.5rem; }
       .edit-post-visual-editor .acf-block-preview .comments-area .comment-notes,
       .block-editor-inserter__preview .acf-block-preview .comments-area .comment-notes {

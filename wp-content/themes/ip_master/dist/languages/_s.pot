@@ -94,6 +94,10 @@ msgstr ""
 msgid "Widget area for %s"
 msgstr ""
 
+#: ../../functions.php:229
+msgid "Share This Article:"
+msgstr ""
+
 #: ../../header.php:27
 msgid "Skip to content"
 msgstr ""
@@ -121,6 +125,14 @@ msgstr ""
 
 #: ../../searchform.php:17
 msgid "Submit"
+msgstr ""
+
+#: ../../single.php:28
+msgid "Previous Post"
+msgstr ""
+
+#: ../../single.php:29
+msgid "Next Post"
 msgstr ""
 
 #: ../../template-scaffolding.php:3
