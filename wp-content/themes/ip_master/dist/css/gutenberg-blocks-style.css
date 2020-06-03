@@ -1197,6 +1197,15 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       margin-top: 2.5rem;
       margin-bottom: 2.5rem;
       width: 100%; }
+      .edit-post-visual-editor .acf-block-preview .site-main.hide-title,
+      .block-editor-inserter__preview .acf-block-preview .site-main.hide-title {
+        margin: 0px; }
+        .edit-post-visual-editor .acf-block-preview .site-main.hide-title h1.entry-title,
+        .block-editor-inserter__preview .acf-block-preview .site-main.hide-title h1.entry-title {
+          display: none; }
+        .edit-post-visual-editor .acf-block-preview .site-main.hide-title .entry-content,
+        .block-editor-inserter__preview .acf-block-preview .site-main.hide-title .entry-content {
+          margin-top: 0px; }
       .edit-post-visual-editor .acf-block-preview .site-main.acf-content-blocks,
       .block-editor-inserter__preview .acf-block-preview .site-main.acf-content-blocks {
         margin-top: 0;
@@ -1576,7 +1585,7 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
             max-width: 15.625rem; } }
       .edit-post-visual-editor .acf-block-preview .comment-form textarea,
       .block-editor-inserter__preview .acf-block-preview .comment-form textarea {
-        max-width: 54.375rem;
+        margin-top: 10px;
         transition: border 0.3s ease-in-out; }
         .edit-post-visual-editor .acf-block-preview .comment-form textarea:focus, .edit-post-visual-editor .acf-block-preview .comment-form textarea:active,
         .block-editor-inserter__preview .acf-block-preview .comment-form textarea:focus,
@@ -1613,22 +1622,43 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
         background-color: #f1f1f1; }
       .edit-post-visual-editor .acf-block-preview .comment-list .comment-content,
       .block-editor-inserter__preview .acf-block-preview .comment-list .comment-content {
-        margin: 1.5rem 0;
-        max-width: 58.5rem; }
+        margin: 1.5rem 0; }
       .edit-post-visual-editor .acf-block-preview .comment-list .comment-author,
       .block-editor-inserter__preview .acf-block-preview .comment-list .comment-author {
         line-height: 1; }
       .edit-post-visual-editor .acf-block-preview .comment-list .comment-meta,
       .block-editor-inserter__preview .acf-block-preview .comment-list .comment-meta {
+        display: flex;
+        flex: 0 0 100%;
+        flex-flow: row wrap;
+        width: 100%;
         margin: 0 0 0.875rem; }
         .edit-post-visual-editor .acf-block-preview .comment-list .comment-meta .comment-author,
         .block-editor-inserter__preview .acf-block-preview .comment-list .comment-meta .comment-author {
-          align-items: center;
-          display: flex; }
+          width: 100%; }
+          @media screen and (min-width: 900px) {
+            .edit-post-visual-editor .acf-block-preview .comment-list .comment-meta .comment-author,
+            .block-editor-inserter__preview .acf-block-preview .comment-list .comment-meta .comment-author {
+              align-items: center;
+              display: flex;
+              order: 1;
+              width: 50%; } }
+          .edit-post-visual-editor .acf-block-preview .comment-list .comment-meta .comment-author img.avatar,
+          .block-editor-inserter__preview .acf-block-preview .comment-list .comment-meta .comment-author img.avatar {
+            margin: 0 .5rem 0 0; }
           .edit-post-visual-editor .acf-block-preview .comment-list .comment-meta .comment-author .says,
           .block-editor-inserter__preview .acf-block-preview .comment-list .comment-meta .comment-author .says {
             display: inline-block;
             margin-left: 0.3125rem; }
+        .edit-post-visual-editor .acf-block-preview .comment-list .comment-meta .comment-metadata,
+        .block-editor-inserter__preview .acf-block-preview .comment-list .comment-meta .comment-metadata {
+          width: 100%; }
+          @media screen and (min-width: 900px) {
+            .edit-post-visual-editor .acf-block-preview .comment-list .comment-meta .comment-metadata,
+            .block-editor-inserter__preview .acf-block-preview .comment-list .comment-meta .comment-metadata {
+              order: 2;
+              width: 50%;
+              text-align: right; } }
       .edit-post-visual-editor .acf-block-preview .comment-list .comment-metadata,
       .block-editor-inserter__preview .acf-block-preview .comment-list .comment-metadata {
         margin-top: 1.5625rem;
@@ -1801,7 +1831,12 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       .edit-post-visual-editor .acf-block-preview .site-footer .bottom,
       .block-editor-inserter__preview .acf-block-preview .site-footer .bottom {
         text-align: center;
-        clear: both; }
+        clear: both;
+        padding: 10px; }
+        @media screen and (min-width: 900px) {
+          .edit-post-visual-editor .acf-block-preview .site-footer .bottom,
+          .block-editor-inserter__preview .acf-block-preview .site-footer .bottom {
+            padding: 0px; } }
     .edit-post-visual-editor .acf-block-preview button,
     .edit-post-visual-editor .acf-block-preview input,
     .edit-post-visual-editor .acf-block-preview select,
@@ -2117,6 +2152,9 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
     .edit-post-visual-editor .acf-block-preview .search-form .search-submit,
     .block-editor-inserter__preview .acf-block-preview .search-form .search-submit {
       width: 6.25rem; }
+    .edit-post-visual-editor .acf-block-preview .search-form .button,
+    .block-editor-inserter__preview .acf-block-preview .search-form .button {
+      margin-top: 10px; }
     .edit-post-visual-editor .acf-block-preview .site-header,
     .block-editor-inserter__preview .acf-block-preview .site-header {
       flex: 0 0 100%;
@@ -2155,7 +2193,7 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
         @media screen and (min-width: 900px) {
           .edit-post-visual-editor .acf-block-preview .site-header .site-branding,
           .block-editor-inserter__preview .acf-block-preview .site-header .site-branding {
-            width: 45%; } }
+            width: 100%; } }
         .edit-post-visual-editor .acf-block-preview .site-header .site-branding img,
         .block-editor-inserter__preview .acf-block-preview .site-header .site-branding img {
           display: block;
@@ -2280,7 +2318,8 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
           .block-editor-inserter__preview .acf-block-preview .site-header .desktop-search .search-form input[type=reset],
           .block-editor-inserter__preview .acf-block-preview .site-header .desktop-search .search-form input[type=submit] {
             background-color: #d31020;
-            transition: all 0.5s ease 0s; }
+            transition: all 0.5s ease 0s;
+            margin-top: 0px; }
             .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form .button:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form .button:focus, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form button:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form button:focus, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=button]:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=button]:focus, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=reset]:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=reset]:focus, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=submit]:hover, .edit-post-visual-editor .acf-block-preview .site-header .form-container .search-form input[type=submit]:focus, .edit-post-visual-editor .acf-block-preview .site-header .desktop-search .search-form .button:hover, .edit-post-visual-editor .acf-block-preview .site-header .desktop-search .search-form .button:focus, .edit-post-visual-editor .acf-block-preview .site-header .desktop-search .search-form button:hover, .edit-post-visual-editor .acf-block-preview .site-header .desktop-search .search-form button:focus, .edit-post-visual-editor .acf-block-preview .site-header .desktop-search .search-form input[type=button]:hover, .edit-post-visual-editor .acf-block-preview .site-header .desktop-search .search-form input[type=button]:focus, .edit-post-visual-editor .acf-block-preview .site-header .desktop-search .search-form input[type=reset]:hover, .edit-post-visual-editor .acf-block-preview .site-header .desktop-search .search-form input[type=reset]:focus, .edit-post-visual-editor .acf-block-preview .site-header .desktop-search .search-form input[type=submit]:hover, .edit-post-visual-editor .acf-block-preview .site-header .desktop-search .search-form input[type=submit]:focus,
             .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form .button:hover,
             .block-editor-inserter__preview .acf-block-preview .site-header .form-container .search-form .button:focus,
@@ -2684,93 +2723,6 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
     .edit-post-visual-editor .acf-block-preview .login h1 a,
     .block-editor-inserter__preview .acf-block-preview .login h1 a {
       background-image: url(../src/images/adminlogo.png); }
-    .edit-post-visual-editor .acf-block-preview .accordion-block,
-    .block-editor-inserter__preview .acf-block-preview .accordion-block {
-      position: relative; }
-      .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item,
-      .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item {
-        margin-top: 1.5rem; }
-        .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item-header,
-        .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item-header {
-          cursor: pointer;
-          position: relative; }
-        .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item-title,
-        .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item-title {
-          margin: 0;
-          padding-right: 1.875rem;
-          position: relative; }
-        .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item-content,
-        .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item-content {
-          max-height: 0;
-          opacity: 0;
-          transition: visiblity 0.3s, max-height 0.3s, opacity 0.3s;
-          transition-delay: 0.4s, 0s, 0.2s;
-          visibility: hidden; }
-          .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item-content p:last-of-type,
-          .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item-content p:last-of-type {
-            margin-bottom: 0; }
-        .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item.open .accordion-item-content,
-        .no-js .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item .accordion-item-content,
-        .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item.open .accordion-item-content,
-        .no-js
-        .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item .accordion-item-content {
-          max-height: 625rem;
-          opacity: 1;
-          visibility: visible; }
-        .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item-toggle,
-        .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item-toggle {
-          padding: 0;
-          position: absolute;
-          top: 0.75rem;
-          right: 0;
-          align-items: center;
-          background-color: transparent;
-          border: none;
-          color: inherit;
-          display: flex;
-          min-width: unset;
-          width: 100%; }
-          .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item-toggle-icon,
-          .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item-toggle-icon {
-            position: absolute;
-            top: calc(50% - 0.75rem);
-            right: 0;
-            height: 1.5rem;
-            width: 1.5rem;
-            background-color: #666;
-            border-radius: 100%;
-            color: #fff;
-            transition: transform 0.3s ease-in-out; }
-            .no-js .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item-toggle-icon, .no-js
-            .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item-toggle-icon {
-              display: none; }
-        .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item.open .accordion-item-toggle span,
-        .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item.open .accordion-item-toggle span {
-          transform: rotate(45deg); }
-        .edit-post-visual-editor .acf-block-preview .accordion-block .accordion .accordion-item .item-toggle,
-        .block-editor-inserter__preview .acf-block-preview .accordion-block .accordion .accordion-item .item-toggle {
-          height: 1.5rem;
-          width: 1.5rem; }
-    .edit-post-visual-editor .acf-block-preview .cta-block,
-    .block-editor-inserter__preview .acf-block-preview .cta-block {
-      text-align: center; }
-      @media screen and (min-width: 600px) {
-        .edit-post-visual-editor .acf-block-preview .cta-block,
-        .block-editor-inserter__preview .acf-block-preview .cta-block {
-          text-align: left; } }
-      .edit-post-visual-editor .acf-block-preview .cta-block .cta-title,
-      .block-editor-inserter__preview .acf-block-preview .cta-block .cta-title {
-        width: 100%; }
-      .edit-post-visual-editor .acf-block-preview .cta-block .cta-text,
-      .block-editor-inserter__preview .acf-block-preview .cta-block .cta-text {
-        font-weight: 400; }
-      .edit-post-visual-editor .acf-block-preview .cta-block .button-cta,
-      .block-editor-inserter__preview .acf-block-preview .cta-block .button-cta {
-        margin: 0 auto; }
-        @media screen and (min-width: 600px) {
-          .edit-post-visual-editor .acf-block-preview .cta-block .button-cta,
-          .block-editor-inserter__preview .acf-block-preview .cta-block .button-cta {
-            margin: 0; } }
     .edit-post-visual-editor .acf-block-preview .carousel-block.content-block,
     .block-editor-inserter__preview .acf-block-preview .carousel-block.content-block {
       padding-top: 0;
@@ -2785,14 +2737,24 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       z-index: 10; }
     .edit-post-visual-editor .acf-block-preview .carousel-block .slick-next,
     .block-editor-inserter__preview .acf-block-preview .carousel-block .slick-next {
-      right: 1.25rem; }
+      right: 1.25rem;
+      display: none !important; }
+      @media screen and (min-width: 900px) {
+        .edit-post-visual-editor .acf-block-preview .carousel-block .slick-next,
+        .block-editor-inserter__preview .acf-block-preview .carousel-block .slick-next {
+          display: block !important; } }
       @media screen and (min-width: 1200px) {
         .edit-post-visual-editor .acf-block-preview .carousel-block .slick-next,
         .block-editor-inserter__preview .acf-block-preview .carousel-block .slick-next {
           right: 0; } }
     .edit-post-visual-editor .acf-block-preview .carousel-block .slick-prev,
     .block-editor-inserter__preview .acf-block-preview .carousel-block .slick-prev {
-      left: 1.25rem; }
+      left: 1.25rem;
+      display: none !important; }
+      @media screen and (min-width: 900px) {
+        .edit-post-visual-editor .acf-block-preview .carousel-block .slick-prev,
+        .block-editor-inserter__preview .acf-block-preview .carousel-block .slick-prev {
+          display: block !important; } }
       @media screen and (min-width: 1200px) {
         .edit-post-visual-editor .acf-block-preview .carousel-block .slick-prev,
         .block-editor-inserter__preview .acf-block-preview .carousel-block .slick-prev {
@@ -2926,37 +2888,6 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       .video-toggled .edit-post-visual-editor .acf-block-preview .video-toggle, .video-toggled
       .block-editor-inserter__preview .acf-block-preview .video-toggle {
         background-image: url(../images/icons/play.svg); }
-    .edit-post-visual-editor .acf-block-preview .hero-block-content,
-    .block-editor-inserter__preview .acf-block-preview .hero-block-content {
-      margin: 0 auto;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      height: 31.25rem;
-      justify-content: center;
-      max-width: 50%;
-      position: relative;
-      text-align: center; }
-    .edit-post-visual-editor .acf-block-preview .hero-block-description,
-    .block-editor-inserter__preview .acf-block-preview .hero-block-description {
-      padding-bottom: 2.5rem; }
-    .edit-post-visual-editor .acf-block-preview .hero-block .button-hero,
-    .block-editor-inserter__preview .acf-block-preview .hero-block .button-hero {
-      font-size: inherit;
-      height: auto;
-      line-height: normal;
-      padding: 0.5rem 1.25rem;
-      text-decoration: none; }
-    .edit-post-visual-editor .acf-block-preview .ie .hero .hero-title,
-    .edit-post-visual-editor .acf-block-preview .ie .hero .hero-description,
-    .block-editor-inserter__preview .acf-block-preview .ie .hero .hero-title,
-    .block-editor-inserter__preview .acf-block-preview .ie .hero .hero-description {
-      width: 100%; }
-    .edit-post-visual-editor .acf-block-preview .recent-posts-block,
-    .edit-post-visual-editor .acf-block-preview .related-posts-block,
-    .block-editor-inserter__preview .acf-block-preview .recent-posts-block,
-    .block-editor-inserter__preview .acf-block-preview .related-posts-block {
-      padding-bottom: 0; }
     .edit-post-visual-editor .acf-block-preview .caret-down,
     .block-editor-inserter__preview .acf-block-preview .caret-down {
       height: 1.25rem;
@@ -3000,6 +2931,9 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
     .edit-post-visual-editor .acf-block-preview .main-navigation,
     .block-editor-inserter__preview .acf-block-preview .main-navigation {
       display: none; }
+      .edit-post-visual-editor .acf-block-preview .main-navigation.footer,
+      .block-editor-inserter__preview .acf-block-preview .main-navigation.footer {
+        display: block; }
       @media screen and (min-width: 900px) {
         .edit-post-visual-editor .acf-block-preview .main-navigation,
         .block-editor-inserter__preview .acf-block-preview .main-navigation {
@@ -3025,6 +2959,13 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
         .block-editor-inserter__preview .acf-block-preview .main-navigation ul li {
           margin: 0 0.625rem 0 0;
           display: inline-block; }
+          .edit-post-visual-editor .acf-block-preview .main-navigation ul li.mobile,
+          .block-editor-inserter__preview .acf-block-preview .main-navigation ul li.mobile {
+            display: block; }
+            @media screen and (min-width: 900px) {
+              .edit-post-visual-editor .acf-block-preview .main-navigation ul li.mobile,
+              .block-editor-inserter__preview .acf-block-preview .main-navigation ul li.mobile {
+                display: none; } }
           .edit-post-visual-editor .acf-block-preview .main-navigation ul li a,
           .block-editor-inserter__preview .acf-block-preview .main-navigation ul li a {
             color: #d31020;
@@ -3079,7 +3020,14 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
         position: relative; }
     .edit-post-visual-editor .acf-block-preview .bottom .main-navigation,
     .block-editor-inserter__preview .acf-block-preview .bottom .main-navigation {
-      width: 75%; }
+      width: 50%; }
+      @media screen and (min-width: 1200px) {
+        .edit-post-visual-editor .acf-block-preview .bottom .main-navigation,
+        .block-editor-inserter__preview .acf-block-preview .bottom .main-navigation {
+          width: 75%; }
+          .edit-post-visual-editor .acf-block-preview .bottom .main-navigation ul,
+          .block-editor-inserter__preview .acf-block-preview .bottom .main-navigation ul {
+            padding-left: 0px; } }
       .edit-post-visual-editor .acf-block-preview .bottom .main-navigation ul,
       .block-editor-inserter__preview .acf-block-preview .bottom .main-navigation ul {
         padding-top: 10px; }
@@ -3100,7 +3048,15 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       .block-editor-inserter__preview .acf-block-preview .mobile-menu li {
         padding: 0.75rem;
         list-style: none;
-        position: relative; }
+        position: relative;
+        border-bottom: 1px solid #000; }
+        .edit-post-visual-editor .acf-block-preview .mobile-menu li ul,
+        .block-editor-inserter__preview .acf-block-preview .mobile-menu li ul {
+          border-top: 1px solid #000;
+          margin-top: 10px; }
+        .edit-post-visual-editor .acf-block-preview .mobile-menu li li:last-child,
+        .block-editor-inserter__preview .acf-block-preview .mobile-menu li li:last-child {
+          border-bottom: none; }
       .edit-post-visual-editor .acf-block-preview .mobile-menu a,
       .block-editor-inserter__preview .acf-block-preview .mobile-menu a {
         color: #d31020;
@@ -3446,12 +3402,6 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
     .block-editor-inserter__preview .acf-block-preview .content-block h6,
     .block-editor-inserter__preview .acf-block-preview .content-block p {
       color: inherit; }
-    .edit-post-visual-editor .acf-block-preview .content-block.alignfull,
-    .block-editor-inserter__preview .acf-block-preview .content-block.alignfull {
-      left: unset;
-      margin: 0;
-      right: unset;
-      width: 100%; }
     .edit-post-visual-editor .acf-block-preview .wp-block-image figcaption,
     .block-editor-inserter__preview .acf-block-preview .wp-block-image figcaption {
       text-align: center;
@@ -3654,6 +3604,23 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
           border-bottom: none;
           padding-bottom: 0px;
           margin-bottom: 0px; }
+    .edit-post-visual-editor .acf-block-preview .ab-block-profile .ab-profile-avatar-wrap,
+    .block-editor-inserter__preview .acf-block-preview .ab-block-profile .ab-profile-avatar-wrap {
+      max-width: 100%;
+      width: 100%; }
+      @media screen and (min-width: 900px) {
+        .edit-post-visual-editor .acf-block-preview .ab-block-profile .ab-profile-avatar-wrap,
+        .block-editor-inserter__preview .acf-block-preview .ab-block-profile .ab-profile-avatar-wrap {
+          max-width: 210px; } }
+    .edit-post-visual-editor .acf-block-preview .wp-block-search .wp-block-search__button,
+    .block-editor-inserter__preview .acf-block-preview .wp-block-search .wp-block-search__button {
+      width: 80%;
+      margin-top: 20px; }
+      @media screen and (min-width: 900px) {
+        .edit-post-visual-editor .acf-block-preview .wp-block-search .wp-block-search__button,
+        .block-editor-inserter__preview .acf-block-preview .wp-block-search .wp-block-search__button {
+          width: auto;
+          margin-top: 0px; } }
     .edit-post-visual-editor .acf-block-preview .hero-block-content,
     .block-editor-inserter__preview .acf-block-preview .hero-block-content {
       height: unset; }

@@ -6,9 +6,17 @@ main.blog{
 		margin:0px auto;
 	}
 	.sidebar{
+		width:100%;
+		margin-left:0px;
 		order:2;
-		margin-left:2%;
-		width:25%;
+		margin-top:40px;
+
+		@include media($desktop) {
+			order:2;
+			margin-left:2%;
+			width:25%;
+			margin-top:0px;
+		}
 
 		.block{
 			background-color:#eee;
@@ -38,8 +46,13 @@ main.blog{
 		}
 	}
 	.blog-content{
+		width:100%;
 		order:1;
-		width:73%;
+
+		@include media($desktop) {
+			order:1;
+			width:73%;
+		}
 		article.post{
 			border-bottom:1px solid $color-secondary;
 			padding-bottom:40px;
@@ -50,16 +63,25 @@ main.blog{
 				border-bottom:none;
 			}
 			.image{
-				width:25%;
-				margin-right:3%;
-				order:1;
+				width:100%;
+				margin-right:0px;
+				margin-bottom:20px;
+				@include media($tablet-landscape) {
+					width:25%;
+					margin-right:3%;
+					order:1;
+					margin-bottom:0px;
+				}
 			}
 			.post-content{
 				width:100%;
 				&.image{
-					order:2;
-					width:72%;
-					margin-right:0px;
+					width:100%;
+					@include media($tablet-landscape) {
+						order:2;
+						width:72%;
+						margin-right:0px;
+					}
 				}
 			}
 			.entry-header{
@@ -79,6 +101,9 @@ main.blog{
 			}
 			.entry-meta{
 				font-style: italic;
+				.display-flex{
+					padding-left:0px;
+				}
 				.posted-on{
 					display: inline-block;
 				}
@@ -109,23 +134,42 @@ main.single{
 					border-bottom:1px solid #ccc;
 					margin-bottom:25px;
 					padding-bottom:30px;
+					.display-flex{
+						padding-left:0px;
+					}
 					.left{
-						order:1;
-						width:50%;
+						width:100%;
+
+						@include media($tablet-portrait) {
+							order:1;
+							width:50%;
+						}
+
 						.posted-on{
 							display: inline-block;
 						}
 					}
 					.right{
-						order:1;
-						width:50%;
+						width:100%;
+						text-align: left;
+
+						@include media($tablet-portrait) {
+							order:1;
+							width:50%;
+							text-align: right;
+						}
 					}
 				}
 			}
 		}
 	}
 	.post__social{
-		padding:10px 0px;
+		padding:40px 2.5rem;
+		margin:0px;
+		@include media($desktop) {
+			padding:10px 0px;
+			margin:2.5rem auto;
+		}
 		.social-share{
 			a{
 				margin-left:5px;

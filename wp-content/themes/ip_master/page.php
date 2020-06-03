@@ -14,8 +14,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main">
-
+	<main id="main" class="site-main <?php if(get_field('hide_title')):?>hide-title<?php endif; ?>">
 		<?php
 		while ( have_posts() ) :
 			the_post();

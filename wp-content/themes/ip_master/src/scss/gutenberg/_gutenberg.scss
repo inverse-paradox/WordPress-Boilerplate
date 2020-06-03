@@ -27,13 +27,6 @@
 	p {
 		color: inherit;
 	}
-
-	&.alignfull {
-		left: unset;
-		margin: 0;
-		right: unset;
-		width: 100%;
-	}
 } //.content-block
 
 .wp-block-image{
@@ -267,5 +260,22 @@ ul.wp-block-social-links{
 			padding-bottom:0px;
 			margin-bottom:0px;
 		}
+	}
+}
+
+.ab-block-profile .ab-profile-avatar-wrap{
+	max-width:100%;
+	width:100%;
+	@include media($tablet-landscape) {
+		max-width:210px;
+	}
+}
+
+.wp-block-search .wp-block-search__button{
+	width:80%;
+	margin-top:20px;
+	@include media($tablet-landscape) {
+		width:auto;
+		margin-top:0px;
 	}
 }

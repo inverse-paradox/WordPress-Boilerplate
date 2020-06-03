@@ -40,7 +40,7 @@
 		}
 
 		@include media($tablet-landscape) {
-			width: 45%;
+			width: 100%;
 		}
 
 		// Don't let the logo get out of control.
@@ -187,6 +187,7 @@
 			.button, button, input[type=button], input[type=reset], input[type=submit]{
 				background-color:$color-primary;
 				transition:all 0.5s ease 0s;
+				margin-top:0px;
 				&:hover, &:focus{
 					background-color:$color-secondary;
 					color:#fff;

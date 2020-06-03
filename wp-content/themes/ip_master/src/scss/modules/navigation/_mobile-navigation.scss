@@ -16,16 +16,21 @@
 	@include list-reset;
 
 	ul {
-
 		@include list-reset;
 	} // ul
 
 	li {
-
 		@include padding(rem(12));
-
 		list-style: none;
 		position: relative;
+		border-bottom:1px solid #000;
+		ul{
+			border-top:1px solid #000;
+			margin-top:10px;
+		}
+		li:last-child{
+			border-bottom:none;
+		}
 	} // li
 
 	a {

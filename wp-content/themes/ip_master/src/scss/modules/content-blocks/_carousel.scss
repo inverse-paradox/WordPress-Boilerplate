@@ -27,6 +27,11 @@ $slide-height: rem(500);
 	// Next button.
 	.slick-next {
 		right: $gutter;
+		display: none!important;
+
+		@include media($tablet-landscape) {
+			display: block!important;
+		}
 
 		@include media($desktop) {
 			right: 0;
@@ -36,6 +41,11 @@ $slide-height: rem(500);
 	// Previous button.
 	.slick-prev {
 		left: $gutter;
+		display: none!important;
+
+		@include media($tablet-landscape) {
+			display: block!important;
+		}
 
 		@include media($desktop) {
 			left: 0;

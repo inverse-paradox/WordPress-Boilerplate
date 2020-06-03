@@ -6,6 +6,10 @@
 .main-navigation {
 	display: none;
 
+	&.footer{
+		display: block;
+	}
+
 	@include media($tablet-landscape) {
 		display: block;
 	}
@@ -33,6 +37,14 @@
 			@include margin(0 rem(10) 0 0);
 
 			display: inline-block;
+
+			&.mobile{
+				display: block;
+
+				@include media($tablet-landscape) {
+					display: none;
+				}
+			}
 
 			a{
 				color:$color-primary;
@@ -110,7 +122,13 @@
 
 .bottom{
 	.main-navigation{
-		width:75%;
+		width:50%;
+		@include media($desktop) {
+			width:75%;
+			ul{
+				padding-left:0px;
+			}
+		}
 		ul{
 			padding-top:10px;
 			ul{

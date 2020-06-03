@@ -11,6 +11,16 @@
 
 	width: 100%;
 
+	&.hide-title{
+		margin:0px;
+		h1.entry-title{
+			display: none;
+		}
+		.entry-content{
+			margin-top:0px;
+		}
+	}
+
 	&.acf-content-blocks {
 
 		@include margin(0 null);

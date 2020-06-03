@@ -36,5 +36,9 @@
 	.bottom{
 		text-align: center;
 		clear:both;
+		padding:10px;
+		@include media($tablet-landscape) {
+			padding:0px;
+		}
 	}
 }

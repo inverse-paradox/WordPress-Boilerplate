@@ -80,10 +80,9 @@ function ip_master_scripts() {
 	// Enqueue styles.
 	wp_enqueue_style( 'ip_master-google-font' );
 	wp_enqueue_style( 'ip_master-style', get_stylesheet_directory_uri() . '/dist/css/style.css', array(), $version );
-	wp_enqueue_style( 'gutenberg-style', get_stylesheet_directory_uri() . '/dist/css/gutenberg-blocks-style.css', array(), $version );
 	wp_enqueue_script('ip_script', get_template_directory_uri() . '/dist/js/customizer.min.js',array('jquery'), $version, true);
     wp_enqueue_script('cookies_script', get_template_directory_uri() . '/src/js/lib/cookie.min.js',array('jquery'), null, true);
-
+    
 	// Enqueue scripts.
 	if ( $is_IE ) {
 		wp_enqueue_script( 'ip_master-babel-polyfill', get_template_directory_uri() . '/dist/js/babel-polyfill.min.js', array(), $version, true );
