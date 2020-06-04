@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 if ( ! function_exists( 'ip_master_posted_on' ) ) :

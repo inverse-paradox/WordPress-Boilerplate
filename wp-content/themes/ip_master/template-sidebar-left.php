@@ -6,7 +6,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 get_header(); ?>

@@ -4,7 +4,7 @@
  *
  * This file is used to house "getter" function, that fetch data from the database.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 /**

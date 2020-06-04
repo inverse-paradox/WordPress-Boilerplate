@@ -2,7 +2,7 @@
 /**
  * The template used for displaying icons in the scaffolding library.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 ?>

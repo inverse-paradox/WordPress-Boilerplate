@@ -1,10 +1,10 @@
 <?php
 /**
- * Inverse Paradox functions and definitions.
+ * IP functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 if ( ! function_exists( 'ip_master_setup' ) ) :
@@ -21,7 +21,7 @@ if ( ! function_exists( 'ip_master_setup' ) ) :
 		/**
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Inverse Paradox, use a find and replace
+		 * If you're building a theme based on IP, use a find and replace
 		 * to change 'ip_master' to the name of your theme in all the template files.
 		 * You will also need to update the Gulpfile with the new text domain
 		 * and matching destination POT file.
@@ -255,7 +255,7 @@ if ($readingtime == 1) {
 
 // Create the function use in the action hook
 function example_add_dashboard_widgets() {
-    wp_add_dashboard_widget('iframe_dashboard_widget', 'Inverse Paradox Information', 'iframe_dashboard_widget_function');
+    wp_add_dashboard_widget('iframe_dashboard_widget', 'IP Information', 'iframe_dashboard_widget_function');
 }
 
 // Hook into the 'wp_dashboard_setup' action to register our other functions

@@ -2,7 +2,7 @@
 /**
  * The template used for displaying media in the scaffolding library.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 global $wp_embed;

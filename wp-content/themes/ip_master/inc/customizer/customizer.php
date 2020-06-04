@@ -2,7 +2,7 @@
 /**
  * Set up the theme customizer.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 /**

@@ -2,7 +2,7 @@
 /**
  * The template used for displaying a caroursel.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 $alignment    = ip_master_get_block_alignment( $block );

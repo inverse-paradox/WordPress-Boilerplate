@@ -2,7 +2,7 @@
 /**
  * Custom scripts and styles.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 /**

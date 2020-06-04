@@ -2,7 +2,7 @@
 /**
  * The template used for displaying colors & fonts in the scaffolding library.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 ?>

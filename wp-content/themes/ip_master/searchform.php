@@ -2,7 +2,7 @@
 /**
  * The template for displaying the search form.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 // Make sure our search forms have unique IDs in the event more than 1 is on a page.

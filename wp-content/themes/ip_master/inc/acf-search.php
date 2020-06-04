@@ -5,7 +5,7 @@
  * Extend WordPress search to include custom fields.
  * https://adambalee.com
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 /**

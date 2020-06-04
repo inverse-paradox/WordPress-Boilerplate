@@ -2,7 +2,7 @@
 /**
  * Display social sharing icons.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 ?>

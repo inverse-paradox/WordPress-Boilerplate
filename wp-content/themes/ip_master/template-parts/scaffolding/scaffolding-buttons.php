@@ -2,7 +2,7 @@
 /**
  * The template used for displaying Buttons in the scaffolding library.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 ?>

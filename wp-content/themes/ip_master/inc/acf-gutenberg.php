@@ -4,7 +4,7 @@
  *
  * A place to register blocks for use in Gutenberg.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 // Make sure ACF is active.

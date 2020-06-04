@@ -2,7 +2,7 @@
 /**
  * Customizer sections.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 /**

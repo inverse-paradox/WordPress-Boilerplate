@@ -2,7 +2,7 @@
 /**
  * The template used for displaying typography in the scaffolding library.
  *
- * @package Inverse Paradox
+ * @package IP
  */
 
 ?>
@@ -344,8 +344,8 @@
 		array(
 			'title'       => 'Delete Text',
 			'description' => 'Display the edited content of a text string.',
-			'usage'       => '<del>Inverse Paradox</del>',
-			'output'      => '<p>We use <del>Inverse Paradox</del> wd_s to build themes.</p>',
+			'usage'       => '<del>IP</del>',
+			'output'      => '<p>We use <del>IP</del> wd_s to build themes.</p>',
 		)
 	);
 
