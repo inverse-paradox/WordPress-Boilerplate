@@ -73,11 +73,13 @@ jQuery(document).ready(function($) {
 			document.querySelector(".main-bar").classList.toggle("visible");
 		};
 
-		searchMobile.onclick = function() {
-			document.querySelector(".menu-mobile-search").classList.toggle("visible");
-			document.querySelector(".main-bar").classList.toggle("visible");
-			iconClose.classList.toggle("visibility");
-		};
+		if (searchMobile != null) {
+			searchMobile.onclick = function() {
+				document.querySelector(".menu-mobile-search").classList.toggle("visible");
+				document.querySelector(".main-bar").classList.toggle("visible");
+				iconClose.classList.toggle("visibility");
+			};
+		}
 
 		document.addEventListener("touchstart", function() {}, true);
 	});
