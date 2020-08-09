@@ -643,10 +643,10 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       left: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      max-width: 99.5vw;
+      max-width: 100vw;
       position: relative;
       right: 50%;
-      width: 99.5vw; }
+      width: 100vw; }
     .edit-post-visual-editor .acf-block-preview embed,
     .edit-post-visual-editor .acf-block-preview iframe,
     .edit-post-visual-editor .acf-block-preview object,
@@ -1467,7 +1467,7 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       .block-editor-inserter__preview .acf-block-preview input[type="submit"]:hover,
       .block-editor-inserter__preview .acf-block-preview input[type="submit"]:active {
         color: #fff;
-        opacity: 0.6; }
+        background-color: #1a1a1a; }
       .edit-post-visual-editor .acf-block-preview .button:focus,
       .edit-post-visual-editor .acf-block-preview button:focus,
       .edit-post-visual-editor .acf-block-preview input[type="button"]:focus,
@@ -2169,10 +2169,13 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
         .edit-post-visual-editor .acf-block-preview .site-header .announcement .close-announcement,
         .block-editor-inserter__preview .acf-block-preview .site-header .announcement .close-announcement {
           float: right;
-          transition: all 0.5s ease 0s; }
-          .edit-post-visual-editor .acf-block-preview .site-header .announcement .close-announcement:hover,
-          .block-editor-inserter__preview .acf-block-preview .site-header .announcement .close-announcement:hover {
-            color: #eee; }
+          transition: all 0.5s ease 0s;
+          padding: 0px 10px; }
+          .edit-post-visual-editor .acf-block-preview .site-header .announcement .close-announcement:hover, .edit-post-visual-editor .acf-block-preview .site-header .announcement .close-announcement:active, .edit-post-visual-editor .acf-block-preview .site-header .announcement .close-announcement:focus,
+          .block-editor-inserter__preview .acf-block-preview .site-header .announcement .close-announcement:hover,
+          .block-editor-inserter__preview .acf-block-preview .site-header .announcement .close-announcement:active,
+          .block-editor-inserter__preview .acf-block-preview .site-header .announcement .close-announcement:focus {
+            background-color: #000; }
       .edit-post-visual-editor .acf-block-preview .site-header button.off-canvas-open,
       .block-editor-inserter__preview .acf-block-preview .site-header button.off-canvas-open {
         top: 0px;
@@ -2675,7 +2678,6 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       .edit-post-visual-editor .acf-block-preview table td,
       .block-editor-inserter__preview .acf-block-preview table td {
         border: 1px solid #ccc;
-        border-bottom: 0;
         font-size: 1rem;
         text-align: center; }
         @media screen and (min-width: 783px) {
@@ -2799,6 +2801,10 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       .edit-post-visual-editor .acf-block-preview .slide .button-slide,
       .block-editor-inserter__preview .acf-block-preview .slide .button-slide {
         text-decoration: none; }
+        .edit-post-visual-editor .acf-block-preview .slide .button-slide:hover, .edit-post-visual-editor .acf-block-preview .slide .button-slide:active,
+        .block-editor-inserter__preview .acf-block-preview .slide .button-slide:hover,
+        .block-editor-inserter__preview .acf-block-preview .slide .button-slide:active {
+          background-color: #1a1a1a !important; }
     .edit-post-visual-editor .acf-block-preview .ie .slide .slide-title,
     .edit-post-visual-editor .acf-block-preview .ie .slide .slide-description,
     .block-editor-inserter__preview .acf-block-preview .ie .slide .slide-title,
@@ -3619,6 +3625,10 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
         .block-editor-inserter__preview .acf-block-preview .wp-block-search .wp-block-search__button {
           width: auto;
           margin-top: 0px; } }
+    .edit-post-visual-editor .acf-block-preview pre.wp-block-verse, .edit-post-visual-editor .acf-block-preview pre.wp-block-preformatted,
+    .block-editor-inserter__preview .acf-block-preview pre.wp-block-verse,
+    .block-editor-inserter__preview .acf-block-preview pre.wp-block-preformatted {
+      margin: 0 0 1.5rem 0; }
     .edit-post-visual-editor .acf-block-preview .hero-block-content,
     .block-editor-inserter__preview .acf-block-preview .hero-block-content {
       height: unset; }

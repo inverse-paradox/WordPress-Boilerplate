@@ -42,7 +42,7 @@ input[type="submit"] {
 	&:hover,
 	&:active {
 		color: $color-text-button;
-		opacity: 0.6;
+		background-color: darken($color-background-button,30%);
 	} // &:hover, &:active
 
 	&:focus {

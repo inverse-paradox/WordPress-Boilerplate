@@ -102,6 +102,9 @@ $slide-height: rem(500);
 	// Remove any text decoration.
 	.button-slide {
 		text-decoration: none;
+		&:hover, &:active{
+			background-color: darken($color-background-button,30%)!important;
+		}
 	} // a.button-slide
 } // .slide
 
