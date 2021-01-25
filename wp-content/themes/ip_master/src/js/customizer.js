@@ -5,6 +5,28 @@
  * @author Corey Collins
  */
 
+/**
+ * Adds A11Y Clic and Keypress Function
+ *
+ * @source https://karlgroves.com/2014/11/24/ridiculously-easy-trick-for-keyboard-accessibility
+ * @since January 25, 2021
+ * @author Dustin Leer
+ */
+function a11yClick(event) {
+	if (event.type === 'click') {
+		return true;
+	}
+	else if (event.type === 'keypress') {
+		var code = event.charCode || event.keyCode;
+		if ((code === 32) || (code === 13)) {
+			return true;
+		}
+	}
+	else {
+		return false;
+	}
+}
+
 if ( ( 'complete' === document.readyState || 'loading' !== document.readyState ) && ! document.documentElement.doScroll ) {
 	wdsCustomizer();
 } else {
@@ -48,11 +70,13 @@ function wdsCustomizer() {
 
 //--------------------
 //  HOME PAGE ANNOUNCEMENT
-//-------------------- 
+//--------------------
 jQuery(function($){
-    $('.close-announcement').on("click", function() {
-        $('.announcement').hide()
-        Cookies.set('closed_announcement', 'true', { expires: 1 });
+    $('.close-announcement').on("click", function(event) {
+		if (a11yClick(event) === true) {
+			$('.announcement').hide()
+			Cookies.set('closed_announcement', 'true', { expires: 1 });
+		}
     });
 
     if(Cookies.get('closed_announcement')) {
@@ -62,7 +86,7 @@ jQuery(function($){
 
 //--------------------
 //  SEARCH
-//-------------------- 
+//--------------------
 jQuery(document).ready(function($) {
 	window.addEventListener("load", function() {
 		var search = document.querySelector(".search-toggle_desktop");
