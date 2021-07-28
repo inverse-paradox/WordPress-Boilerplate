@@ -65,13 +65,13 @@ jQuery(function($){
 //-------------------- 
 jQuery(document).ready(function($) {
 	window.addEventListener("load", function() {
-		var search = document.querySelector(".search-toggle_desktop button");
+		var search = $(".search-toggle_desktop button");
 		var searchMobile = document.querySelector(".search-toggle_mobile");
 
-		search.onclick = function() {
-			document.querySelector(".desktop-search").classList.toggle("visible");
-			document.querySelector(".main-bar").classList.toggle("visible");
-		};
+		search.on('click', function() {
+			$('.desktop-search').toggleClass('visible');
+			$('.main-bar').toggleClass('visible');
+		});
 
 		if (searchMobile != null) {
 			searchMobile.onclick = function() {
