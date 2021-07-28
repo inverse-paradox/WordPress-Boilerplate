@@ -65,7 +65,7 @@ jQuery(function($){
 //-------------------- 
 jQuery(document).ready(function($) {
 	window.addEventListener("load", function() {
-		var search = document.querySelector(".search-toggle_desktop");
+		var search = document.querySelector(".search-toggle_desktop button");
 		var searchMobile = document.querySelector(".search-toggle_mobile");
 
 		search.onclick = function() {
