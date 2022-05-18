@@ -87,14 +87,5 @@
 
 			<?php ip_master_display_header_button(); ?>
 
-			<?php
-			// If we're doing a URL, just make this LOOK like a button but be a link.
-			if ( 'link' === $button_setting && $button_url ) :
-			?>
-			<?php else : ?>
-				<div class="desktop-search" id="desktop-search">
-	            	<?php echo get_search_form(); ?>
-	        	</div>
-	        <?php endif; ?>
 	    </div><!-- bottom -->
 	</header><!-- .site-header-->
