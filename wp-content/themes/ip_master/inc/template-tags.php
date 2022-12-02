@@ -510,14 +510,15 @@ function ip_master_display_header_button() {
 	// Grab our button and text values.
 	$button_url  = get_theme_mod( 'ip_master_header_button_url' );
 	$button_text = get_theme_mod( 'ip_master_header_button_text' );
+	$button_target = get_theme_mod( 'ip_master_header_button_checkbox' );
 	?>
-			
+
 	<div class="site-header-action">
 		<?php
 		// If we're doing a URL, just make this LOOK like a button but be a link.
 		if ( 'link' === $button_setting && $button_url ) :
 		?>
-			<a href="<?php echo esc_url( $button_url ); ?>" class="button button-link"><?php echo esc_html( $button_text ?: __( 'More Information', 'ip_master' ) ); ?></a>
+			<a href="<?php echo esc_url( $button_url ); ?>" class="button button-link" target="<?php echo $button_target = $button_target ? '_blank' : '_self'; ?>"><?php echo esc_html( $button_text ?: __( 'More Information', 'ip_master' ) ); ?></a>
 		<?php else : ?>
 			<div class="search-toggle search-toggle_desktop">
                 <button class="search nav-search-button cta-button" aria-expanded="false" aria-label="Goto search form">

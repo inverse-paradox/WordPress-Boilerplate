@@ -180,7 +180,7 @@ function ip_master_customize_footer_checkbox( $wp_customize ) {
 		array(
   			'capability' => 'edit_theme_options',
   			'sanitize_callback' => 'themeslug_sanitize_checkbox',
-		) 
+		)
 	);
 
 	$wp_customize->add_control(
@@ -313,6 +313,32 @@ function ip_master_customize_header_button( $wp_customize ) {
 			'active_callback' => 'ip_master_customizer_is_header_button_link', // Only displays if the Link option is selected above.
 		)
 	);
+
+	// Register a setting for the link checkbox.
+	$wp_customize->add_setting(
+		'ip_master_header_button_checkbox',
+		array(
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'ip_master_sanitize_checkbox',
+		)
+	);
+
+	// Display the checkbox... maybe!
+	$wp_customize->add_control(
+		'ip_master_header_button_checkbox',
+		array(
+			'label' => esc_html__( 'Open in new tab', 'ip_master' ),
+			//'description' => __( 'Have link open in a new tab.' ),
+			'section' => 'ip_master_header_section',
+			'type' => 'checkbox',
+			'active_callback' => 'ip_master_customizer_is_header_button_link', // Only displays if the Link option is selected above.
+		)
+	);
+
+	function ip_master_sanitize_checkbox( $checked ) {
+		// Boolean check.
+		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	}
 
 	// Register a setting for the link text.
 	$wp_customize->add_setting(
