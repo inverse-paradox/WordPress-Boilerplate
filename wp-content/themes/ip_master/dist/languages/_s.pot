@@ -1,4 +1,4 @@
-# Copyright (C) 2020 unnamed project
+# Copyright (C) 2023 unnamed project
 # This file is distributed under the same license as the unnamed project package.
 msgid ""
 msgstr ""
