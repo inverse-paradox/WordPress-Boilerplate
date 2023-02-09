@@ -4,6 +4,11 @@
  * @since January 31, 2020
  * @author Corey Collins
  */
+if ( ( 'complete' === document.readyState || 'loading' !== document.readyState ) && ! document.documentElement.doScroll ) {
+	wdsCustomizer();
+} else {
+	document.addEventListener( 'DOMContentLoaded', wdsCustomizer );
+}
 
 /**
  * Adds A11Y Click and Keypress Function
@@ -25,12 +30,6 @@ function a11yClick(event) {
 	else {
 		return false;
 	}
-}
-
-if ( ( 'complete' === document.readyState || 'loading' !== document.readyState ) && ! document.documentElement.doScroll ) {
-	wdsCustomizer();
-} else {
-	document.addEventListener( 'DOMContentLoaded', wdsCustomizer );
 }
 
 /**
