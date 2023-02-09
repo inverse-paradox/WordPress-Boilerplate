@@ -6,7 +6,7 @@
  */
 
 /**
- * Adds A11Y Clic and Keypress Function
+ * Adds A11Y Click and Keypress Function
  *
  * @source https://karlgroves.com/2014/11/24/ridiculously-easy-trick-for-keyboard-accessibility
  * @since January 25, 2021
@@ -72,16 +72,31 @@ function wdsCustomizer() {
 //  HOME PAGE ANNOUNCEMENT
 //--------------------
 jQuery(function($){
+	/**
+	 * Click handler for hiding the announcement.
+	 */
     $('.close-announcement').on("click", function(event) {
+
+		// Check if the click was also triggered by a keyboard event.
 		if (a11yClick(event) === true) {
-			$('.announcement').hide()
+			// Hide the announcement.
+			$('.announcement').css({'display':'none'});
+
+			// Set a cookie to remember that the announcement was closed.
 			Cookies.set('closed_announcement', 'true', { expires: 1 });
 		}
     });
 
-    if(Cookies.get('closed_announcement')) {
-        $('.announcement').hide();
-    }
+	// Check if the announcement cookie is set or not.
+    if( !Cookies.get('closed_announcement') ) {
+
+		// Show the announcement if the cookie is not set.
+        $('.announcement').css({'display':'block'});
+    } else {
+
+		// Hide the announcement if the cookie is set.
+		$('.announcement').css({'display':'none'});
+	}
 });
 
 //--------------------

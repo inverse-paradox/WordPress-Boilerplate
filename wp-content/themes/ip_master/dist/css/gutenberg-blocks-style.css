@@ -2160,6 +2160,7 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
       padding: 0px 0px 20px 0px; }
       .edit-post-visual-editor .acf-block-preview .site-header .announcement,
       .block-editor-inserter__preview .acf-block-preview .site-header .announcement {
+        display: none;
         background-color: #d31020;
         color: #fff;
         padding: 10px 0px;

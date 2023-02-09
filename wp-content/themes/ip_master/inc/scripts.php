@@ -74,15 +74,15 @@ function ip_master_scripts() {
 
 	// Register styles & scripts.
 	wp_register_style( 'ip_master-google-font', ip_master_font_url(), array(), null ); // @codingStandardsIgnoreLine - required to avoid Google caching issues.
-	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/dist/slick/slick.css', null, '1.8.1' );
-	wp_register_script( 'slick-carousel', get_template_directory_uri() . '/dist/slick/slick' . $suffix . '.js', array( 'jquery' ), '1.8.1', true );
+	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/dist/slick-carousel/slick/slick.css', null, '1.8.1' );
+	wp_register_script( 'slick-carousel', get_template_directory_uri() . '/dist/slick-carousel/slick/slick' . $suffix . '.js', array( 'jquery' ), '1.8.1', true );
 
 	// Enqueue styles.
 	wp_enqueue_style( 'ip_master-google-font' );
 	wp_enqueue_style( 'ip_master-style', get_stylesheet_directory_uri() . '/dist/css/style.css', array(), $version );
 	wp_enqueue_script('ip_script', get_template_directory_uri() . '/dist/js/customizer.min.js',array('jquery'), $version, true);
     wp_enqueue_script('cookies_script', get_template_directory_uri() . '/src/js/lib/cookie.min.js',array('jquery'), null, true);
-    
+
 	// Enqueue scripts.
 	if ( $is_IE ) {
 		wp_enqueue_script( 'ip_master-babel-polyfill', get_template_directory_uri() . '/dist/js/babel-polyfill.min.js', array(), $version, true );
